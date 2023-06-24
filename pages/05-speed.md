@@ -99,6 +99,66 @@ title: Speed Convolutions
 </div>
 
 ---
+title: Speed Results 1
+---
+
+# Results
+
+::content::
+
+<Speed-APTimeVOC-1 v-animattr />
+<Speed-APTimeLWIR-1 v-animattr />
+
+<style>
+    :deep(.slot-content) {
+        @apply grid-(~ rows-1 cols-[1fr_1fr]) place-items-center;
+        @apply mb-6 mt-6 px-16;
+        col-gap: 2rem;
+    }
+
+    svg {
+        height: 100%;
+    }
+</style>
+
+---
+title: Speed Upsample
+---
+
+# Upsample
+
+::content::
+
+<div class="flex-(~ col justify-center items-center) h-full w-[85%] mx-auto">
+
+<Speed-Upsample v-animattr />
+
+</div>
+
+---
+title: Speed Results 2
+---
+
+# Results
+
+::content::
+
+<Speed-APTimeVOC-2 v-animattr />
+<Speed-APTimeLWIR-2 v-animattr />
+
+<style>
+    :deep(.slot-content) {
+        @apply grid-(~ rows-1 cols-[1fr_1fr]) place-items-center;
+        @apply mb-6 mt-6 px-16;
+        col-gap: 2rem;
+    }
+
+    svg {
+        height: 100%;
+    }
+</style>
+
+---
 title: Speed Pruning
 ---
 
@@ -111,6 +171,29 @@ title: Speed Pruning
 <Speed-Pruning v-animattr />
 
 </div>
+
+---
+title: Speed Results 3
+---
+
+# Results
+
+::content::
+
+<Speed-APTimeVOC-3 v-animattr />
+<Speed-APTimeLWIR-3 v-animattr />
+
+<style>
+    :deep(.slot-content) {
+        @apply grid-(~ rows-1 cols-[1fr_1fr]) place-items-center;
+        @apply mb-6 mt-6 px-16;
+        col-gap: 2rem;
+    }
+
+    svg {
+        height: 100%;
+    }
+</style>
 
 ---
 title: Speed Quantisation
@@ -129,30 +212,15 @@ title: Speed Quantisation
 </div>
 
 ---
-title: Speed Upsample
----
-
-# Upsample
-
-::content::
-
-<div class="flex-(~ col justify-center items-center) h-full w-[85%] mx-auto">
-
-<Speed-Upsample v-animattr />
-
-</div>
-
----
-title: Speed Results
-clicks: 4
+title: Speed Results 4
 ---
 
 # Results
 
 ::content::
 
-<Speed-APTimeVOC v-animattr />
-<Speed-APTimeLWIR v-animattr />
+<Speed-APTimeVOC-4 v-animattr />
+<Speed-APTimeLWIR-4 v-animattr />
 
 <style>
     :deep(.slot-content) {
