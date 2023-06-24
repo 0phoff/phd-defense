@@ -101,7 +101,7 @@ title: Plane Dataset
 | Region  | 10.1 km²     | 17.3 km²       |
 | Objects | 32970        | 3000           |
 
-<img src="/04-plane/annotation_size.svg" v-click />
+<img src="/04-plane/annotation_size.svg?url" v-click />
 
 <style>
     :deep(.slot-content) {
@@ -179,11 +179,11 @@ title: Plane PostProcessing
 <div class="grid-(~ cols-[1fr_1fr_1fr] rows-[1fr_1fr] gap-4) place-items-center w-full h-full grid-hidden">
 
 <img v-click src="/04-plane/nms-example-local.png" />
-<img v-click src="/04-plane/nms-neighbour-diagram.svg" />
+<img v-click src="/04-plane/nms-neighbour-diagram.svg?url" />
 <img v-click src="/04-plane/nms-example-neighbour.png" />
 
 <img class="ioa-example" v-click src="/04-plane/ioa-example.png" />
-<img class="ioa-diagram" v-click src="/04-plane/ioa-diagram.svg" />
+<img class="ioa-diagram" v-click src="/04-plane/ioa-diagram.svg?url" />
 
 </div>
 
@@ -222,11 +222,11 @@ title: Plane Models
     <figcaption>DYolo</figcaption>
 </figure>
 <figure v-click>
-    <img src="/04-plane/architecture-resnetyolo.svg" />
+    <img src="/04-plane/architecture-resnetyolo.svg?url" />
     <figcaption>ResnetYolo</figcaption>
 </figure>
 <figure v-click>
-    <img src="/04-plane/architecture-resnetyolo-fusion.svg" />
+    <img src="/04-plane/architecture-resnetyolo-fusion.svg?url" />
     <figcaption>ResnetYolo Fusion</figcaption>
 </figure>
 
@@ -259,10 +259,10 @@ title: Plane Results
 ::content::
 
 <Plane-APsolar height="100%" v-animattr :start="0" :length="1" />
-<img src="/04-plane/det-examples-solar.svg" />
+<img src="/04-plane/det-examples-solar.svg?url" />
 
 <Plane-APpool height="100%" v-animattr :start="0" :length="1" />
-<img src="/04-plane/det-examples-pool.svg" />
+<img src="/04-plane/det-examples-pool.svg?url" />
 
 <style>
     :deep(.slot-content) {

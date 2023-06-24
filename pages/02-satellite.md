@@ -47,7 +47,7 @@ title: Satellite Data
 | Objects    | 4075        | 1096        |
 
 <img class="examples" alt="satellite examples" src="/02-satellite/anno_examples.png" />
-<img class="sizes" alt="object sizes" src="/02-satellite/annotation_size.svg" v-click />
+<img class="sizes" alt="object sizes" src="/02-satellite/annotation_size.svg?url" v-click />
 
 <style>
     :deep(.slot-content) {
@@ -145,13 +145,13 @@ clicks: 8
 <div class="ap imagenet flex-(~ col items-center justify-between) h-full" v-click="3" >
     <Sat-APVehicleImagenet class="vehicle" v-animattr :start="4" />
     <Sat-APVesselImagenet class="vessel" v-animattr :start="4" />
-    <img src="/02-satellite/ap_legend.svg" />
+    <img src="/02-satellite/ap_legend.svg?url" />
 </div>
 
 <div class="ap dota flex-(~ col items-center justify-between) h-full" v-after="7" >
     <Sat-APVehicleDota class="vehicle" v-animattr :start="8" />
     <Sat-APVesselDota class="vessel" v-animattr :start="8" />
-    <img src="/02-satellite/ap_legend.svg" />
+    <img src="/02-satellite/ap_legend.svg?url" />
 </div>
 
 <style>

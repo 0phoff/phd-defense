@@ -98,7 +98,7 @@ clicks: 3
 ::content::
 
 <Fusion-Network class="fusion" v-animattr :start="2" />
-<img class="fusion" src="/03-fusion/fuse_layer.svg" v-click="1" />
+<img class="fusion" src="/03-fusion/fuse_layer.svg?url" v-click="1" />
 <figure v-click="3">
     <img src="/03-fusion/architecture-yolov2.png" />
     <figcaption>Yolo II</figcaption>
