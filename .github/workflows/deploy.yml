@@ -34,7 +34,7 @@ jobs:
 
       # Build demo
       - name: Build
-        run: pnpm run build --base /slidev-theme-eavise/
+        run: pnpm run build --base /phd-defense/
         
       # Deploy
       - name: Deploy
