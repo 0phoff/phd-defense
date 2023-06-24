@@ -12,8 +12,8 @@ dependencies:
     specifier: ^4.0.0
     version: 4.0.0
   slidev-addon-animattr:
-    specifier: ^1.1.1
-    version: 1.1.1
+    specifier: ^1.1.2
+    version: 1.1.2
   slidev-theme-eavise:
     specifier: ^1.0.0
     version: 1.0.0
@@ -3942,8 +3942,8 @@ packages:
     dev: false
     optional: true
 
-  /slidev-addon-animattr@1.1.1:
-    resolution: {integrity: sha512-qkDW9lT76fgLqPYAwrRV9V3xT4ia8ZdgA9QeloONu9en02vAInMnt14zgAw8tE+lYxjKaNA5rOR6sa+3p9+b2g==}
+  /slidev-addon-animattr@1.1.2:
+    resolution: {integrity: sha512-ZJVhmkjxvOgrpNQCtPOC6nLYTWjZB/arnnH2AMsspg1u2zEP3sv6sJE4LJcAWGvMCX1CnLF9j2/5EA/GWSKrRw==}
     engines: {node: '>=14.0.0', slidev: '>=0.32.1'}
     dependencies:
       find-cache-dir: 3.3.2
