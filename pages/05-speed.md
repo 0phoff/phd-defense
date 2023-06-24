@@ -183,9 +183,9 @@ How much can we speed up our models whilst maintaining the accuracy?
 <v-clicks>
 
 - Blindly applying all optimizations does not yield the best results
-- More constrained problems allow for more reduction in complexity
 - On Pascal VOC, we managed to make our model 4x faster
 - On LWIR, we made our model 15x faster
+- More constrained problems allow for more reduction in complexity
 
 </v-clicks>
 </div>
