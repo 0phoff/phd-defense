@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" version="1.1" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-width="2">
+  <g stroke="#8c8c8c" stroke-opacity=".3">
+   <rect x="2"  y="2" width="25" height="25" />
+   <rect x="22" y="2" width="25" height="25" />
+   <rect x="42" y="2" width="25" height="25" />
+   <rect x="62" y="2" width="25" height="25" />
+   <rect x="82" y="2" width="25" height="25" />
+
+   <rect x="2"  y="22" width="25" height="25" />
+   <rect x="22" y="22" width="25" height="25" />
+   <rect x="42" y="22" width="25" height="25" />
+   <rect x="62" y="22" width="25" height="25" />
+   <rect x="82" y="22" width="25" height="25" />
+
+   <rect x="2"  y="42" width="25" height="25" />
+   <rect x="22" y="42" width="25" height="25" />
+   <rect x="42" y="42" width="25" height="25" />
+   <rect x="62" y="42" width="25" height="25" />
+   <rect x="82" y="42" width="25" height="25" />
+
+   <rect x="2"  y="62" width="25" height="25" />
+   <rect x="22" y="62" width="25" height="25" />
+   <rect x="42" y="62" width="25" height="25" />
+   <rect x="62" y="62" width="25" height="25" />
+   <rect x="82" y="62" width="25" height="25" />
+
+   <rect x="2"  y="82" width="25" height="25" />
+   <rect x="22" y="82" width="25" height="25" />
+   <rect x="42" y="82" width="25" height="25" />
+   <rect x="62" y="82" width="25" height="25" />
+   <rect x="82" y="82" width="25" height="25" />
+  </g>
+
+  <rect x="2" y="2" width="45" height="45" stroke="#5975a4" stroke-width="1" stroke-dasharray="1" pathLength="100" />
+  <rect x="2" y="2" width="25" height="25" stroke="#5975a4" />
+
+  <rect x="2" y="22" width="65" height="65" stroke="#cb8964" stroke-width="1" stroke-dasharray="1" pathLength="100" />
+  <rect x="22" y="42" width="25" height="25" stroke="#cb8964" />
+
+  <rect x="62" y="42" width="45" height="65" stroke="#5f9e6e" stroke-width="1" stroke-dasharray="1" pathLength="100" />
+  <rect x="82" y="62" width="25" height="25" stroke="#5f9e6e" />
+ </g>
+</svg>

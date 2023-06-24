@@ -1,0 +1,165 @@
+.slidev-page {
+    @apply h-full;
+}
+
+.slidev-layout.default {
+    background: white;
+    
+    .icon {
+        position: absolute;
+        height: 9rem;
+        top: 0;
+        right: 0;
+        padding: 1.75rem;
+
+        svg {
+            height: 100%;
+            fill: white !important;
+            stroke: white !important;
+            outline: none;
+        }
+    }
+}
+
+.slidev-layout.custom-section {
+    @apply !w-full grid-(~ cols-[1fr_1fr_1fr_1fr_1fr]);
+    background: black;
+    gap: 15px;
+    
+    .pilar {
+        position: relative;
+        isolation: isolate;
+    }
+
+    .pilar::before {
+        content: '';
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background-image: var(--image);
+        filter: var(--filter);
+        transform: var(--transform);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .pilar.current::after {
+        content: '';
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: var(--color);
+        opacity: 0.6;
+    }
+
+    .pilar.next {
+        display: none;
+    }
+
+    &[data-animattr] .pilar.current {
+        translate: 0 -100%;
+    }
+
+    &[data-animattr~="0"] .pilar.current {
+        transition: translate 300ms cubic-bezier(.25,0,1,1);
+        translate: 0 0;
+    }
+
+    .icon {
+        width: 85%;
+        fill: white !important;
+        margin: 500px auto 0;
+    }
+}
+
+/* Common blocks*/
+#slide-content {
+    background-color: black !important;
+}
+
+.slidev-vclick-target {
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+.grid-hidden {
+    overflow: hidden;
+}
+.grid-hidden > * {
+    overflow: hidden;
+}
+
+/* TeachTraining */
+@property --loss {
+    syntax: "<number>";
+    initial-value: 0.0102;
+    inherits: false;
+}
+@property --temp {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: false;
+}
+@property --v1 {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+@property --v2 {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+#lossvalue::before {
+    content: counter(v1) "." counter(v2, decimal-leading-zero);
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+		
+/* TeachStatistics */
+@property --confidence {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: true;
+}
+
+@property --precision {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: true;
+}
+
+@property --recall {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: true;
+}
+
+#confidencevalue::before, #precisionvalue::before, #recallvalue::before {
+    content: counter(c) "%";
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Sat-Patches */
+@property --x-position {
+    syntax: '<length>';
+    initial-value: 0px;
+    inherits: false;
+}
+
+@property --y-position {
+    syntax: '<length>';
+    initial-value: 0px;
+    inherits: false;
+}

@@ -1,0 +1,2304 @@
+<svg
+	version="1.1" viewBox="0 0 2445 1369" xmlns="http://www.w3.org/2000/svg"
+	data-length="8" data-smil="{0: '&lt;marker1_hide', 1: 'marker1_show', 2: '&gt;marker1_move', 4: '&lt;marker2_hide', 5: 'marker2_show', 6: '&gt;marker2_move'}"
+>
+	<style>
+		/* BASIC STYLING */
+		svg {
+			--conv-black: #597096;
+			--conv-white: #e2e7f0;
+		}
+
+		/* FADES */
+		svg[data-animattr] :where(#conv1, #conv2, #conv3, #conv4, #conv5, #conv6, #conv7, #conv8, #out1, #out2, #out3, #out4, #out5) {
+			transition: opacity 750ms;
+			opacity: 0;
+		}
+
+		svg[data-animattr~="0"] :where(#conv1) { opacity: 1; }
+		svg[data-animattr~="1"] :where(#out1) { opacity: 1; }
+		svg[data-animattr~="3"] :where(#conv2, #out2) { opacity: 1; }
+		svg[data-animattr~="3"] :where(#conv3, #out3) { opacity: 1; transition-delay: 300ms; }
+		svg[data-animattr~="3"] :where(#conv4, #out4) { opacity: 1; transition-delay: 600ms; }
+		svg[data-animattr~="4"] :where(#conv5) { opacity: 1; transition-delay: 300ms; }
+		svg[data-animattr~="4"] :where(#conv6) { opacity: 1; transition-delay: 600ms; }
+		svg[data-animattr~="4"] :where(#conv7) { opacity: 1; transition-delay: 900ms; }
+		svg[data-animattr~="4"] :where(#conv8) { opacity: 1; transition-delay: 1200ms; }
+		svg[data-animattr~="5"] :where(#out5) { opacity: 1;}
+
+		/* FLIP and COLOR */
+		@keyframes flip {
+			0% {
+				transform: rotateY(0deg);
+			}
+
+			49% {
+				fill: auto;
+			}
+
+			51% {
+				fill: var(--fill-alt);
+			}
+
+			100% {
+				transform: rotateY(180deg);
+				fill: var(--fill-alt);
+			}
+		}
+
+		svg[data-animattr] :where(#input, #out1, #out2, #out3, #out4, #out5) {
+			perspective: 1000px;
+		}
+
+		svg[data-animattr] :where(#input, #out1, #out2, #out3, #out4, #out5) rect {
+			transform-box: fill-box;
+			transform-origin: center center;
+			transform-style: preserve-3d;
+		}
+
+		/* FLIP */
+		svg[data-animattr~="7"] #input rect:nth-child(1)   { animation: 500ms flip forwards ease 0ms;    }
+		svg[data-animattr~="7"] #input rect:nth-child(2)   { animation: 500ms flip forwards ease 50ms;   }
+		svg[data-animattr~="7"] #input rect:nth-child(3)   { animation: 500ms flip forwards ease 100ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(4)   { animation: 500ms flip forwards ease 150ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(5)   { animation: 500ms flip forwards ease 200ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(6)   { animation: 500ms flip forwards ease 250ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(7)   { animation: 500ms flip forwards ease 300ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(8)   { animation: 500ms flip forwards ease 350ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(9)   { animation: 500ms flip forwards ease 400ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(10)  { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(11)  { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(12)  { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(13)  { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(14)  { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(15)  { animation: 500ms flip forwards ease 50ms;   }
+		svg[data-animattr~="7"] #input rect:nth-child(16)  { animation: 500ms flip forwards ease 100ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(17)  { animation: 500ms flip forwards ease 150ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(18)  { animation: 500ms flip forwards ease 200ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(19)  { animation: 500ms flip forwards ease 250ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(20)  { animation: 500ms flip forwards ease 300ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(21)  { animation: 500ms flip forwards ease 350ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(22)  { animation: 500ms flip forwards ease 400ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(23)  { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(24)  { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(25)  { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(26)  { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(27)  { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(28)  { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(29)  { animation: 500ms flip forwards ease 100ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(30)  { animation: 500ms flip forwards ease 150ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(31)  { animation: 500ms flip forwards ease 200ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(32)  { animation: 500ms flip forwards ease 250ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(33)  { animation: 500ms flip forwards ease 300ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(34)  { animation: 500ms flip forwards ease 350ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(35)  { animation: 500ms flip forwards ease 400ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(36)  { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(37)  { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(38)  { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(39)  { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(40)  { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(41)  { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(42)  { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(43)  { animation: 500ms flip forwards ease 150ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(44)  { animation: 500ms flip forwards ease 200ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(45)  { animation: 500ms flip forwards ease 250ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(46)  { animation: 500ms flip forwards ease 300ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(47)  { animation: 500ms flip forwards ease 350ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(48)  { animation: 500ms flip forwards ease 400ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(49)  { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(50)  { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(51)  { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(52)  { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(53)  { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(54)  { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(55)  { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(56)  { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(57)  { animation: 500ms flip forwards ease 200ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(58)  { animation: 500ms flip forwards ease 250ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(59)  { animation: 500ms flip forwards ease 300ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(60)  { animation: 500ms flip forwards ease 350ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(61)  { animation: 500ms flip forwards ease 400ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(62)  { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(63)  { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(64)  { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(65)  { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(66)  { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(67)  { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(68)  { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(69)  { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(70)  { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(71)  { animation: 500ms flip forwards ease 250ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(72)  { animation: 500ms flip forwards ease 300ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(73)  { animation: 500ms flip forwards ease 350ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(74)  { animation: 500ms flip forwards ease 400ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(75)  { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(76)  { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(77)  { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(78)  { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(79)  { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(80)  { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(81)  { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(82)  { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(83)  { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(84)  { animation: 500ms flip forwards ease 900ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(85)  { animation: 500ms flip forwards ease 300ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(86)  { animation: 500ms flip forwards ease 350ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(87)  { animation: 500ms flip forwards ease 400ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(88)  { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(89)  { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(90)  { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(91)  { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(92)  { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(93)  { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(94)  { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(95)  { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(96)  { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(97)  { animation: 500ms flip forwards ease 900ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(98)  { animation: 500ms flip forwards ease 950ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(99)  { animation: 500ms flip forwards ease 350ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(100) { animation: 500ms flip forwards ease 400ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(101) { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(102) { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(103) { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(104) { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(105) { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(106) { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(107) { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(108) { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(109) { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(110) { animation: 500ms flip forwards ease 900ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(111) { animation: 500ms flip forwards ease 950ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(112) { animation: 500ms flip forwards ease 1000ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(113) { animation: 500ms flip forwards ease 400ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(114) { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(115) { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(116) { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(117) { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(118) { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(119) { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(120) { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(121) { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(122) { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(123) { animation: 500ms flip forwards ease 900ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(124) { animation: 500ms flip forwards ease 950ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(125) { animation: 500ms flip forwards ease 1000ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(126) { animation: 500ms flip forwards ease 1050ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(127) { animation: 500ms flip forwards ease 450ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(128) { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(129) { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(130) { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(131) { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(132) { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(133) { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(134) { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(135) { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(136) { animation: 500ms flip forwards ease 900ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(137) { animation: 500ms flip forwards ease 950ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(138) { animation: 500ms flip forwards ease 1000ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(139) { animation: 500ms flip forwards ease 1050ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(140) { animation: 500ms flip forwards ease 1100ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(141) { animation: 500ms flip forwards ease 500ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(142) { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(143) { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(144) { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(145) { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(146) { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(147) { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(148) { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(149) { animation: 500ms flip forwards ease 900ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(150) { animation: 500ms flip forwards ease 950ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(151) { animation: 500ms flip forwards ease 1000ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(152) { animation: 500ms flip forwards ease 1050ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(153) { animation: 500ms flip forwards ease 1100ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(154) { animation: 500ms flip forwards ease 1150ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(155) { animation: 500ms flip forwards ease 550ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(156) { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(157) { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(158) { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(159) { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(160) { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(161) { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(162) { animation: 500ms flip forwards ease 900ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(163) { animation: 500ms flip forwards ease 950ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(164) { animation: 500ms flip forwards ease 1000ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(165) { animation: 500ms flip forwards ease 1050ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(166) { animation: 500ms flip forwards ease 1100ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(167) { animation: 500ms flip forwards ease 1150ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(168) { animation: 500ms flip forwards ease 1200ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(169) { animation: 500ms flip forwards ease 600ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(170) { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(171) { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(172) { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(173) { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(174) { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(175) { animation: 500ms flip forwards ease 900ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(176) { animation: 500ms flip forwards ease 950ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(177) { animation: 500ms flip forwards ease 1000ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(178) { animation: 500ms flip forwards ease 1050ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(179) { animation: 500ms flip forwards ease 1100ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(180) { animation: 500ms flip forwards ease 1150ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(181) { animation: 500ms flip forwards ease 1200ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(182) { animation: 500ms flip forwards ease 1250ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(183) { animation: 500ms flip forwards ease 650ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(184) { animation: 500ms flip forwards ease 700ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(185) { animation: 500ms flip forwards ease 750ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(186) { animation: 500ms flip forwards ease 800ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(187) { animation: 500ms flip forwards ease 850ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(188) { animation: 500ms flip forwards ease 900ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(189) { animation: 500ms flip forwards ease 950ms;  }
+		svg[data-animattr~="7"] #input rect:nth-child(190) { animation: 500ms flip forwards ease 1000ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(191) { animation: 500ms flip forwards ease 1050ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(192) { animation: 500ms flip forwards ease 1100ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(193) { animation: 500ms flip forwards ease 1150ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(194) { animation: 500ms flip forwards ease 1200ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(195) { animation: 500ms flip forwards ease 1250ms; }
+		svg[data-animattr~="7"] #input rect:nth-child(196) { animation: 500ms flip forwards ease 1300ms; }
+
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(1)   { animation: 500ms flip forwards ease 0ms;   }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(2)   { animation: 500ms flip forwards ease 50ms;  }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(3)   { animation: 500ms flip forwards ease 100ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(4)   { animation: 500ms flip forwards ease 150ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(5)   { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(6)   { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(7)   { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(8)   { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(9)   { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(10)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(11)  { animation: 500ms flip forwards ease 50ms;  }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(12)  { animation: 500ms flip forwards ease 100ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(13)  { animation: 500ms flip forwards ease 150ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(14)  { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(15)  { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(16)  { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(17)  { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(18)  { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(19)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(20)  { animation: 500ms flip forwards ease 500ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(21)  { animation: 500ms flip forwards ease 100ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(22)  { animation: 500ms flip forwards ease 150ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(23)  { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(24)  { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(25)  { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(26)  { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(27)  { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(28)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(29)  { animation: 500ms flip forwards ease 500ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(30)  { animation: 500ms flip forwards ease 550ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(31)  { animation: 500ms flip forwards ease 150ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(32)  { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(33)  { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(34)  { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(35)  { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(36)  { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(37)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(38)  { animation: 500ms flip forwards ease 500ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(39)  { animation: 500ms flip forwards ease 550ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(40)  { animation: 500ms flip forwards ease 600ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(41)  { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(42)  { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(43)  { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(44)  { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(45)  { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(46)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(47)  { animation: 500ms flip forwards ease 500ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(48)  { animation: 500ms flip forwards ease 550ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(49)  { animation: 500ms flip forwards ease 600ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(50)  { animation: 500ms flip forwards ease 650ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(51)  { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(52)  { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(53)  { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(54)  { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(55)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(56)  { animation: 500ms flip forwards ease 500ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(57)  { animation: 500ms flip forwards ease 550ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(58)  { animation: 500ms flip forwards ease 600ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(59)  { animation: 500ms flip forwards ease 650ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(60)  { animation: 500ms flip forwards ease 700ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(61)  { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(62)  { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(63)  { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(64)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(65)  { animation: 500ms flip forwards ease 500ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(66)  { animation: 500ms flip forwards ease 550ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(67)  { animation: 500ms flip forwards ease 600ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(68)  { animation: 500ms flip forwards ease 650ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(69)  { animation: 500ms flip forwards ease 700ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(70)  { animation: 500ms flip forwards ease 750ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(71)  { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(72)  { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(73)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(74)  { animation: 500ms flip forwards ease 500ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(75)  { animation: 500ms flip forwards ease 550ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(76)  { animation: 500ms flip forwards ease 600ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(77)  { animation: 500ms flip forwards ease 650ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(78)  { animation: 500ms flip forwards ease 700ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(79)  { animation: 500ms flip forwards ease 750ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(80)  { animation: 500ms flip forwards ease 800ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(81)  { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(82)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(83)  { animation: 500ms flip forwards ease 500ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(84)  { animation: 500ms flip forwards ease 550ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(85)  { animation: 500ms flip forwards ease 600ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(86)  { animation: 500ms flip forwards ease 650ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(87)  { animation: 500ms flip forwards ease 700ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(88)  { animation: 500ms flip forwards ease 750ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(89)  { animation: 500ms flip forwards ease 800ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(90)  { animation: 500ms flip forwards ease 850ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(91)  { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(92)  { animation: 500ms flip forwards ease 500ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(93)  { animation: 500ms flip forwards ease 550ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(94)  { animation: 500ms flip forwards ease 600ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(95)  { animation: 500ms flip forwards ease 650ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(96)  { animation: 500ms flip forwards ease 700ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(97)  { animation: 500ms flip forwards ease 750ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(98)  { animation: 500ms flip forwards ease 800ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(99)  { animation: 500ms flip forwards ease 850ms; }
+		svg[data-animattr~="7"] :where(#out1,#out2,#out3,#out4) rect:nth-child(100) { animation: 500ms flip forwards ease 900ms; }
+
+		svg[data-animattr~="7"] #out5 rect:nth-child(1)  { animation: 500ms flip forwards ease 0ms;   }
+		svg[data-animattr~="7"] #out5 rect:nth-child(2)  { animation: 500ms flip forwards ease 50ms;  }
+		svg[data-animattr~="7"] #out5 rect:nth-child(3)  { animation: 500ms flip forwards ease 100ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(4)  { animation: 500ms flip forwards ease 150ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(5)  { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(6)  { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(7)  { animation: 500ms flip forwards ease 50ms;  }
+		svg[data-animattr~="7"] #out5 rect:nth-child(8)  { animation: 500ms flip forwards ease 100ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(9)  { animation: 500ms flip forwards ease 150ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(10) { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(11) { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(12) { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(13) { animation: 500ms flip forwards ease 100ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(14) { animation: 500ms flip forwards ease 150ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(15) { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(16) { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(17) { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(18) { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(19) { animation: 500ms flip forwards ease 150ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(20) { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(21) { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(22) { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(23) { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(24) { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(25) { animation: 500ms flip forwards ease 200ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(26) { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(27) { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(28) { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(29) { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(30) { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(31) { animation: 500ms flip forwards ease 250ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(32) { animation: 500ms flip forwards ease 300ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(33) { animation: 500ms flip forwards ease 350ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(34) { animation: 500ms flip forwards ease 400ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(35) { animation: 500ms flip forwards ease 450ms; }
+		svg[data-animattr~="7"] #out5 rect:nth-child(36) { animation: 500ms flip forwards ease 500ms; }
+
+		/* COLOR */
+		#input rect:nth-child(1)   { --fill-alt: #252525; } 
+		#input rect:nth-child(2)   { --fill-alt: #3a3a3a; } 
+		#input rect:nth-child(3)   { --fill-alt: #232323; } 
+		#input rect:nth-child(4)   { --fill-alt: #1b1b1b; } 
+		#input rect:nth-child(5)   { --fill-alt: #292929; } 
+		#input rect:nth-child(6)   { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(7)   { --fill-alt: #343434; } 
+		#input rect:nth-child(8)   { --fill-alt: #2b2b2b; } 
+		#input rect:nth-child(9)   { --fill-alt: #212121; } 
+		#input rect:nth-child(10)  { --fill-alt: #2b2b2b; } 
+		#input rect:nth-child(11)  { --fill-alt: #3c3c3c; } 
+		#input rect:nth-child(12)  { --fill-alt: #232323; } 
+		#input rect:nth-child(13)  { --fill-alt: #383838; } 
+		#input rect:nth-child(14)  { --fill-alt: #303030; } 
+		#input rect:nth-child(15)  { --fill-alt: #323232; } 
+		#input rect:nth-child(16)  { --fill-alt: #292929; } 
+		#input rect:nth-child(17)  { --fill-alt: #272727; } 
+		#input rect:nth-child(18)  { --fill-alt: #1d1d1d; } 
+		#input rect:nth-child(19)  { --fill-alt: #252525; } 
+		#input rect:nth-child(20)  { --fill-alt: #292929; } 
+		#input rect:nth-child(21)  { --fill-alt: #212121; } 
+		#input rect:nth-child(22)  { --fill-alt: #303030; } 
+		#input rect:nth-child(23)  { --fill-alt: #212121; } 
+		#input rect:nth-child(24)  { --fill-alt: #d8d8d8; } 
+		#input rect:nth-child(25)  { --fill-alt: #292929; } 
+		#input rect:nth-child(26)  { --fill-alt: #323232; } 
+		#input rect:nth-child(27)  { --fill-alt: #292929; } 
+		#input rect:nth-child(28)  { --fill-alt: #191919; } 
+		#input rect:nth-child(29)  { --fill-alt: #3a3a3a; } 
+		#input rect:nth-child(30)  { --fill-alt: #252525; } 
+		#input rect:nth-child(31)  { --fill-alt: #212121; } 
+		#input rect:nth-child(32)  { --fill-alt: #303030; } 
+		#input rect:nth-child(33)  { --fill-alt: #3c3c3c; } 
+		#input rect:nth-child(34)  { --fill-alt: #3e3e3e; } 
+		#input rect:nth-child(35)  { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(36)  { --fill-alt: #272727; } 
+		#input rect:nth-child(37)  { --fill-alt: #bbbbbb; } 
+		#input rect:nth-child(38)  { --fill-alt: #1d1d1d; } 
+		#input rect:nth-child(39)  { --fill-alt: #d6d6d6; } 
+		#input rect:nth-child(40)  { --fill-alt: #2b2b2b; } 
+		#input rect:nth-child(41)  { --fill-alt: #232323; } 
+		#input rect:nth-child(42)  { --fill-alt: #212121; } 
+		#input rect:nth-child(43)  { --fill-alt: #323232; } 
+		#input rect:nth-child(44)  { --fill-alt: #363636; } 
+		#input rect:nth-child(45)  { --fill-alt: #272727; } 
+		#input rect:nth-child(46)  { --fill-alt: #292929; } 
+		#input rect:nth-child(47)  { --fill-alt: #212121; } 
+		#input rect:nth-child(48)  { --fill-alt: #232323; } 
+		#input rect:nth-child(49)  { --fill-alt: #252525; } 
+		#input rect:nth-child(50)  { --fill-alt: #bbbbbb; } 
+		#input rect:nth-child(51)  { --fill-alt: #191919; } 
+		#input rect:nth-child(52)  { --fill-alt: #232323; } 
+		#input rect:nth-child(53)  { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(54)  { --fill-alt: #e2e2e2; } 
+		#input rect:nth-child(55)  { --fill-alt: #303030; } 
+		#input rect:nth-child(56)  { --fill-alt: #232323; } 
+		#input rect:nth-child(57)  { --fill-alt: #252525; } 
+		#input rect:nth-child(58)  { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(59)  { --fill-alt: #3a3a3a; } 
+		#input rect:nth-child(60)  { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(61)  { --fill-alt: #252525; } 
+		#input rect:nth-child(62)  { --fill-alt: #292929; } 
+		#input rect:nth-child(63)  { --fill-alt: #b1b1b1; } 
+		#input rect:nth-child(64)  { --fill-alt: #252525; } 
+		#input rect:nth-child(65)  { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(66)  { --fill-alt: #292929; } 
+		#input rect:nth-child(67)  { --fill-alt: #272727; } 
+		#input rect:nth-child(68)  { --fill-alt: #363636; } 
+		#input rect:nth-child(69)  { --fill-alt: #bbbbbb; } 
+		#input rect:nth-child(70)  { --fill-alt: #2b2b2b; } 
+		#input rect:nth-child(71)  { --fill-alt: #2b2b2b; } 
+		#input rect:nth-child(72)  { --fill-alt: #212121; } 
+		#input rect:nth-child(73)  { --fill-alt: #292929; } 
+		#input rect:nth-child(74)  { --fill-alt: #252525; } 
+		#input rect:nth-child(75)  { --fill-alt: #212121; } 
+		#input rect:nth-child(76)  { --fill-alt: #292929; } 
+		#input rect:nth-child(77)  { --fill-alt: #d6d6d6; } 
+		#input rect:nth-child(78)  { --fill-alt: #232323; } 
+		#input rect:nth-child(79)  { --fill-alt: #292929; } 
+		#input rect:nth-child(80)  { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(81)  { --fill-alt: #252525; } 
+		#input rect:nth-child(82)  { --fill-alt: #383838; } 
+		#input rect:nth-child(83)  { --fill-alt: #c9c9c9; } 
+		#input rect:nth-child(84)  { --fill-alt: #292929; } 
+		#input rect:nth-child(85)  { --fill-alt: #1d1d1d; } 
+		#input rect:nth-child(86)  { --fill-alt: #363636; } 
+		#input rect:nth-child(87)  { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(88)  { --fill-alt: #363636; } 
+		#input rect:nth-child(89)  { --fill-alt: #3a3a3a; } 
+		#input rect:nth-child(90)  { --fill-alt: #323232; } 
+		#input rect:nth-child(91)  { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(92)  { --fill-alt: #a4a4a4; } 
+		#input rect:nth-child(93)  { --fill-alt: #272727; } 
+		#input rect:nth-child(94)  { --fill-alt: #292929; } 
+		#input rect:nth-child(95)  { --fill-alt: #212121; } 
+		#input rect:nth-child(96)  { --fill-alt: #afafaf; } 
+		#input rect:nth-child(97)  { --fill-alt: #303030; } 
+		#input rect:nth-child(98)  { --fill-alt: #2b2b2b; } 
+		#input rect:nth-child(99)  { --fill-alt: #1d1d1d; } 
+		#input rect:nth-child(100) { --fill-alt: #303030; } 
+		#input rect:nth-child(101) { --fill-alt: #303030; } 
+		#input rect:nth-child(102) { --fill-alt: #272727; } 
+		#input rect:nth-child(103) { --fill-alt: #292929; } 
+		#input rect:nth-child(104) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(105) { --fill-alt: #323232; } 
+		#input rect:nth-child(106) { --fill-alt: #c1c1c1; } 
+		#input rect:nth-child(107) { --fill-alt: #343434; } 
+		#input rect:nth-child(108) { --fill-alt: #323232; } 
+		#input rect:nth-child(109) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(110) { --fill-alt: #b1b1b1; } 
+		#input rect:nth-child(111) { --fill-alt: #252525; } 
+		#input rect:nth-child(112) { --fill-alt: #232323; } 
+		#input rect:nth-child(113) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(114) { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(115) { --fill-alt: #232323; } 
+		#input rect:nth-child(116) { --fill-alt: #292929; } 
+		#input rect:nth-child(117) { --fill-alt: #212121; } 
+		#input rect:nth-child(118) { --fill-alt: #323232; } 
+		#input rect:nth-child(119) { --fill-alt: #232323; } 
+		#input rect:nth-child(120) { --fill-alt: #232323; } 
+		#input rect:nth-child(121) { --fill-alt: #dcdcdc; } 
+		#input rect:nth-child(122) { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(123) { --fill-alt: #c9c9c9; } 
+		#input rect:nth-child(124) { --fill-alt: #292929; } 
+		#input rect:nth-child(125) { --fill-alt: #292929; } 
+		#input rect:nth-child(126) { --fill-alt: #303030; } 
+		#input rect:nth-child(127) { --fill-alt: #2b2b2b; } 
+		#input rect:nth-child(128) { --fill-alt: #343434; } 
+		#input rect:nth-child(129) { --fill-alt: #323232; } 
+		#input rect:nth-child(130) { --fill-alt: #191919; } 
+		#input rect:nth-child(131) { --fill-alt: #252525; } 
+		#input rect:nth-child(132) { --fill-alt: #252525; } 
+		#input rect:nth-child(133) { --fill-alt: #272727; } 
+		#input rect:nth-child(134) { --fill-alt: #343434; } 
+		#input rect:nth-child(135) { --fill-alt: #1d1d1d; } 
+		#input rect:nth-child(136) { --fill-alt: #b9b9b9; } 
+		#input rect:nth-child(137) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(138) { --fill-alt: #383838; } 
+		#input rect:nth-child(139) { --fill-alt: #252525; } 
+		#input rect:nth-child(140) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(141) { --fill-alt: #252525; } 
+		#input rect:nth-child(142) { --fill-alt: #252525; } 
+		#input rect:nth-child(143) { --fill-alt: #1b1b1b; } 
+		#input rect:nth-child(144) { --fill-alt: #303030; } 
+		#input rect:nth-child(145) { --fill-alt: #292929; } 
+		#input rect:nth-child(146) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(147) { --fill-alt: #303030; } 
+		#input rect:nth-child(148) { --fill-alt: #2b2b2b; } 
+		#input rect:nth-child(149) { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(150) { --fill-alt: #e2e2e2; } 
+		#input rect:nth-child(151) { --fill-alt: #1d1d1d; } 
+		#input rect:nth-child(152) { --fill-alt: #303030; } 
+		#input rect:nth-child(153) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(154) { --fill-alt: #232323; } 
+		#input rect:nth-child(155) { --fill-alt: #303030; } 
+		#input rect:nth-child(156) { --fill-alt: #1b1b1b; } 
+		#input rect:nth-child(157) { --fill-alt: #323232; } 
+		#input rect:nth-child(158) { --fill-alt: #383838; } 
+		#input rect:nth-child(159) { --fill-alt: #212121; } 
+		#input rect:nth-child(160) { --fill-alt: #1d1d1d; } 
+		#input rect:nth-child(161) { --fill-alt: #292929; } 
+		#input rect:nth-child(162) { --fill-alt: #3c3c3c; } 
+		#input rect:nth-child(163) { --fill-alt: #b5b5b5; } 
+		#input rect:nth-child(164) { --fill-alt: #212121; } 
+		#input rect:nth-child(165) { --fill-alt: #232323; } 
+		#input rect:nth-child(166) { --fill-alt: #292929; } 
+		#input rect:nth-child(167) { --fill-alt: #272727; } 
+		#input rect:nth-child(168) { --fill-alt: #272727; } 
+		#input rect:nth-child(169) { --fill-alt: #272727; } 
+		#input rect:nth-child(170) { --fill-alt: #272727; } 
+		#input rect:nth-child(171) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(172) { --fill-alt: #2b2b2b; } 
+		#input rect:nth-child(173) { --fill-alt: #232323; } 
+		#input rect:nth-child(174) { --fill-alt: #bfbfbf; } 
+		#input rect:nth-child(175) { --fill-alt: #d6d6d6; } 
+		#input rect:nth-child(176) { --fill-alt: #cbcbcb; } 
+		#input rect:nth-child(177) { --fill-alt: #272727; } 
+		#input rect:nth-child(178) { --fill-alt: #232323; } 
+		#input rect:nth-child(179) { --fill-alt: #343434; } 
+		#input rect:nth-child(180) { --fill-alt: #272727; } 
+		#input rect:nth-child(181) { --fill-alt: #323232; } 
+		#input rect:nth-child(182) { --fill-alt: #383838; } 
+		#input rect:nth-child(183) { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(184) { --fill-alt: #3a3a3a; } 
+		#input rect:nth-child(185) { --fill-alt: #252525; } 
+		#input rect:nth-child(186) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(187) { --fill-alt: #d6d6d6; } 
+		#input rect:nth-child(188) { --fill-alt: #303030; } 
+		#input rect:nth-child(189) { --fill-alt: #303030; } 
+		#input rect:nth-child(190) { --fill-alt: #1f1f1f; } 
+		#input rect:nth-child(191) { --fill-alt: #2e2e2e; } 
+		#input rect:nth-child(192) { --fill-alt: #303030; } 
+		#input rect:nth-child(193) { --fill-alt: #272727; } 
+		#input rect:nth-child(194) { --fill-alt: #232323; } 
+		#input rect:nth-child(195) { --fill-alt: #383838; } 
+		#input rect:nth-child(196) { --fill-alt: #232323; } 
+
+		#out1 rect:nth-child(1)   { --fill-alt: #191919;}
+		#out1 rect:nth-child(2)   { --fill-alt: #191919;}
+		#out1 rect:nth-child(3)   { --fill-alt: #191919;}
+		#out1 rect:nth-child(4)   { --fill-alt: #191919;}
+		#out1 rect:nth-child(5)   { --fill-alt: #191919;}
+		#out1 rect:nth-child(6)   { --fill-alt: #191919;}
+		#out1 rect:nth-child(7)   { --fill-alt: #242424;}
+		#out1 rect:nth-child(8)   { --fill-alt: #191919;}
+		#out1 rect:nth-child(9)   { --fill-alt: #191919;}
+		#out1 rect:nth-child(10)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(11)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(12)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(13)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(14)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(15)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(16)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(17)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(18)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(19)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(20)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(21)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(22)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(23)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(24)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(25)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(26)  { --fill-alt: #737373;}
+		#out1 rect:nth-child(27)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(28)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(29)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(30)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(31)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(32)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(33)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(34)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(35)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(36)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(37)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(38)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(39)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(40)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(41)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(42)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(43)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(44)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(45)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(46)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(47)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(48)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(49)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(50)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(51)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(52)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(53)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(54)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(55)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(56)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(57)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(58)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(59)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(60)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(61)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(62)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(63)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(64)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(65)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(66)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(67)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(68)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(69)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(70)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(71)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(72)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(73)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(74)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(75)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(76)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(77)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(78)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(79)  { --fill-alt: #5c5c5c;}
+		#out1 rect:nth-child(80)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(81)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(82)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(83)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(84)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(85)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(86)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(87)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(88)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(89)  { --fill-alt: #272727;}
+		#out1 rect:nth-child(90)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(91)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(92)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(93)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(94)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(95)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(96)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(97)  { --fill-alt: #2e2e2e;}
+		#out1 rect:nth-child(98)  { --fill-alt: #2e2e2e;}
+		#out1 rect:nth-child(99)  { --fill-alt: #191919;}
+		#out1 rect:nth-child(100) { --fill-alt: #191919;}
+		
+		#out2 rect:nth-child(1)   { --fill-alt: #191919;}
+		#out2 rect:nth-child(2)   { --fill-alt: #191919;}
+		#out2 rect:nth-child(3)   { --fill-alt: #191919;}
+		#out2 rect:nth-child(4)   { --fill-alt: #191919;}
+		#out2 rect:nth-child(5)   { --fill-alt: #191919;}
+		#out2 rect:nth-child(6)   { --fill-alt: #191919;}
+		#out2 rect:nth-child(7)   { --fill-alt: #191919;}
+		#out2 rect:nth-child(8)   { --fill-alt: #252525;}
+		#out2 rect:nth-child(9)   { --fill-alt: #323232;}
+		#out2 rect:nth-child(10)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(11)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(12)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(13)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(14)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(15)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(16)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(17)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(18)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(19)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(20)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(21)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(22)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(23)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(24)  { --fill-alt: #313131;}
+		#out2 rect:nth-child(25)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(26)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(27)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(28)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(29)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(30)  { --fill-alt: #818181;}
+		#out2 rect:nth-child(31)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(32)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(33)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(34)  { --fill-alt: #1a1a1a;}
+		#out2 rect:nth-child(35)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(36)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(37)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(38)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(39)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(40)  { --fill-alt: #1c1c1c;}
+		#out2 rect:nth-child(41)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(42)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(43)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(44)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(45)  { --fill-alt: #686868;}
+		#out2 rect:nth-child(46)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(47)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(48)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(49)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(50)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(51)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(52)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(53)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(54)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(55)  { --fill-alt: #1c1c1c;}
+		#out2 rect:nth-child(56)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(57)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(58)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(59)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(60)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(61)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(62)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(63)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(64)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(65)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(66)  { --fill-alt: #242424;}
+		#out2 rect:nth-child(67)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(68)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(69)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(70)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(71)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(72)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(73)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(74)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(75)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(76)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(77)  { --fill-alt: #5d5d5d;}
+		#out2 rect:nth-child(78)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(79)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(80)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(81)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(82)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(83)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(84)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(85)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(86)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(87)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(88)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(89)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(90)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(91)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(92)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(93)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(94)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(95)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(96)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(97)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(98)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(99)  { --fill-alt: #191919;}
+		#out2 rect:nth-child(100) { --fill-alt: #191919;}
+		
+		#out3 rect:nth-child(1)   { --fill-alt: #191919;}
+		#out3 rect:nth-child(2)   { --fill-alt: #191919;}
+		#out3 rect:nth-child(3)   { --fill-alt: #191919;}
+		#out3 rect:nth-child(4)   { --fill-alt: #191919;}
+		#out3 rect:nth-child(5)   { --fill-alt: #191919;}
+		#out3 rect:nth-child(6)   { --fill-alt: #191919;}
+		#out3 rect:nth-child(7)   { --fill-alt: #191919;}
+		#out3 rect:nth-child(8)   { --fill-alt: #191919;}
+		#out3 rect:nth-child(9)   { --fill-alt: #242424;}
+		#out3 rect:nth-child(10)  { --fill-alt: #494949;}
+		#out3 rect:nth-child(11)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(12)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(13)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(14)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(15)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(16)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(17)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(18)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(19)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(20)  { --fill-alt: #1a1a1a;}
+		#out3 rect:nth-child(21)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(22)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(23)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(24)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(25)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(26)  { --fill-alt: #252525;}
+		#out3 rect:nth-child(27)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(28)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(29)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(30)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(31)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(32)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(33)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(34)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(35)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(36)  { --fill-alt: #636363;}
+		#out3 rect:nth-child(37)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(38)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(39)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(40)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(41)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(42)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(43)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(44)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(45)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(46)  { --fill-alt: #282828;}
+		#out3 rect:nth-child(47)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(48)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(49)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(50)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(51)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(52)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(53)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(54)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(55)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(56)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(57)  { --fill-alt: #464646;}
+		#out3 rect:nth-child(58)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(59)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(60)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(61)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(62)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(63)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(64)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(65)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(66)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(67)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(68)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(69)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(70)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(71)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(72)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(73)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(74)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(75)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(76)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(77)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(78)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(79)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(80)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(81)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(82)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(83)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(84)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(85)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(86)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(87)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(88)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(89)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(90)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(91)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(92)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(93)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(94)  { --fill-alt: #2a2a2a;}
+		#out3 rect:nth-child(95)  { --fill-alt: #767676;}
+		#out3 rect:nth-child(96)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(97)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(98)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(99)  { --fill-alt: #191919;}
+		#out3 rect:nth-child(100) { --fill-alt: #191919;}
+
+		#out4 rect:nth-child(1)   { --fill-alt: #191919;}
+		#out4 rect:nth-child(2)   { --fill-alt: #191919;}
+		#out4 rect:nth-child(3)   { --fill-alt: #191919;}
+		#out4 rect:nth-child(4)   { --fill-alt: #191919;}
+		#out4 rect:nth-child(5)   { --fill-alt: #191919;}
+		#out4 rect:nth-child(6)   { --fill-alt: #2a2a2a;}
+		#out4 rect:nth-child(7)   { --fill-alt: #191919;}
+		#out4 rect:nth-child(8)   { --fill-alt: #191919;}
+		#out4 rect:nth-child(9)   { --fill-alt: #191919;}
+		#out4 rect:nth-child(10)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(11)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(12)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(13)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(14)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(15)  { --fill-alt: #303030;}
+		#out4 rect:nth-child(16)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(17)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(18)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(19)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(20)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(21)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(22)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(23)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(24)  { --fill-alt: #343434;}
+		#out4 rect:nth-child(25)  { --fill-alt: #262626;}
+		#out4 rect:nth-child(26)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(27)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(28)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(29)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(30)  { --fill-alt: #1a1a1a;}
+		#out4 rect:nth-child(31)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(32)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(33)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(34)  { --fill-alt: #2b2b2b;}
+		#out4 rect:nth-child(35)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(36)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(37)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(38)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(39)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(40)  { --fill-alt: #5f5f5f;}
+		#out4 rect:nth-child(41)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(42)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(43)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(44)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(45)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(46)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(47)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(48)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(49)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(50)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(51)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(52)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(53)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(54)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(55)  { --fill-alt: #1e1e1e;}
+		#out4 rect:nth-child(56)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(57)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(58)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(59)  { --fill-alt: #383838;}
+		#out4 rect:nth-child(60)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(61)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(62)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(63)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(64)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(65)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(66)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(67)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(68)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(69)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(70)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(71)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(72)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(73)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(74)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(75)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(76)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(77)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(78)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(79)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(80)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(81)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(82)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(83)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(84)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(85)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(86)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(87)  { --fill-alt: #383838;}
+		#out4 rect:nth-child(88)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(89)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(90)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(91)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(92)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(93)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(94)  { --fill-alt: #323232;}
+		#out4 rect:nth-child(95)  { --fill-alt: #868686;}
+		#out4 rect:nth-child(96)  { --fill-alt: #4e4e4e;}
+		#out4 rect:nth-child(97)  { --fill-alt: #1f1f1f;}
+		#out4 rect:nth-child(98)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(99)  { --fill-alt: #191919;}
+		#out4 rect:nth-child(100) { --fill-alt: #191919;}
+		
+		#out5 rect:nth-child(1)   { --fill-alt: #191919;}
+		#out5 rect:nth-child(2)   { --fill-alt: #191919;}
+		#out5 rect:nth-child(3)   { --fill-alt: #191919;}
+		#out5 rect:nth-child(4)   { --fill-alt: #191919;}
+		#out5 rect:nth-child(5)   { --fill-alt: #191919;}
+		#out5 rect:nth-child(6)   { --fill-alt: #191919;}
+		#out5 rect:nth-child(7)   { --fill-alt: #191919;}
+		#out5 rect:nth-child(8)   { --fill-alt: #191919;}
+		#out5 rect:nth-child(9)   { --fill-alt: #191919;}
+		#out5 rect:nth-child(10)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(11)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(12)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(13)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(14)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(15)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(16)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(17)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(18)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(19)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(20)  { --fill-alt: #1d1d1d;}
+		#out5 rect:nth-child(21)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(22)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(23)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(24)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(25)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(26)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(27)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(28)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(29)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(30)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(31)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(32)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(33)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(34)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(35)  { --fill-alt: #191919;}
+		#out5 rect:nth-child(36)  { --fill-alt: #191919;}
+	</style>
+	
+	<g id="input">
+		<rect x="5"   y="468" width="30" height="30" fill="#343434" />
+		<rect x="36"  y="468" width="30" height="30" fill="#292929" />
+		<rect x="67"  y="468" width="30" height="30" fill="#343434" />
+		<rect x="98"  y="468" width="30" height="30" fill="#292929" />
+		<rect x="129" y="468" width="30" height="30" fill="#2e2e2e" />
+		<rect x="160" y="468" width="30" height="30" fill="#272727" />
+		<rect x="191" y="468" width="30" height="30" fill="#232323" />
+		<rect x="222" y="468" width="30" height="30" fill="#292929" />
+		<rect x="253" y="468" width="30" height="30" fill="#252525" />
+		<rect x="284" y="468" width="30" height="30" fill="#252525" />
+		<rect x="315" y="468" width="30" height="30" fill="#1f1f1f" />
+		<rect x="346" y="468" width="30" height="30" fill="#272727" />
+		<rect x="377" y="468" width="30" height="30" fill="#1d1d1d" />
+		<rect x="408" y="468" width="30" height="30" fill="#252525" />
+		<rect x="5"   y="499" width="30" height="30" fill="#232323" />
+		<rect x="36"  y="499" width="30" height="30" fill="#272727" />
+		<rect x="67"  y="499" width="30" height="30" fill="#323232" />
+		<rect x="98"  y="499" width="30" height="30" fill="#2e2e2e" />
+		<rect x="129" y="499" width="30" height="30" fill="#303030" />
+		<rect x="160" y="499" width="30" height="30" fill="#191919" />
+		<rect x="191" y="499" width="30" height="30" fill="#272727" />
+		<rect x="222" y="499" width="30" height="30" fill="#2b2b2b" />
+		<rect x="253" y="499" width="30" height="30" fill="#1b1b1b" />
+		<rect x="284" y="499" width="30" height="30" fill="#2b2b2b" />
+		<rect x="315" y="499" width="30" height="30" fill="#303030" />
+		<rect x="346" y="499" width="30" height="30" fill="#3e3e3e" />
+		<rect x="377" y="499" width="30" height="30" fill="#272727" />
+		<rect x="408" y="499" width="30" height="30" fill="#323232" />
+		<rect x="5"   y="530" width="30" height="30" fill="#303030" />
+		<rect x="36"  y="530" width="30" height="30" fill="#383838" />
+		<rect x="67"  y="530" width="30" height="30" fill="#2e2e2e" />
+		<rect x="98"  y="530" width="30" height="30" fill="#191919" />
+		<rect x="129" y="530" width="30" height="30" fill="#252525" />
+		<rect x="160" y="530" width="30" height="30" fill="#212121" />
+		<rect x="191" y="530" width="30" height="30" fill="#2b2b2b" />
+		<rect x="222" y="530" width="30" height="30" fill="#272727" />
+		<rect x="253" y="530" width="30" height="30" fill="#1f1f1f" />
+		<rect x="284" y="530" width="30" height="30" fill="#303030" />
+		<rect x="315" y="530" width="30" height="30" fill="#191919" />
+		<rect x="346" y="530" width="30" height="30" fill="#232323" />
+		<rect x="377" y="530" width="30" height="30" fill="#2e2e2e" />
+		<rect x="408" y="530" width="30" height="30" fill="#323232" />
+		<rect x="5"   y="561" width="30" height="30" fill="#2e2e2e" />
+		<rect x="36"  y="561" width="30" height="30" fill="#1f1f1f" />
+		<rect x="67"  y="561" width="30" height="30" fill="#2e2e2e" />
+		<rect x="98"  y="561" width="30" height="30" fill="#292929" />
+		<rect x="129" y="561" width="30" height="30" fill="#272727" />
+		<rect x="160" y="561" width="30" height="30" fill="#323232" />
+		<rect x="191" y="561" width="30" height="30" fill="#2e2e2e" />
+		<rect x="222" y="561" width="30" height="30" fill="#292929" />
+		<rect x="253" y="561" width="30" height="30" fill="#343434" />
+		<rect x="284" y="561" width="30" height="30" fill="#272727" />
+		<rect x="315" y="561" width="30" height="30" fill="#2e2e2e" />
+		<rect x="346" y="561" width="30" height="30" fill="#1d1d1d" />
+		<rect x="377" y="561" width="30" height="30" fill="#232323" />
+		<rect x="408" y="561" width="30" height="30" fill="#2e2e2e" />
+		<rect x="5"   y="592" width="30" height="30" fill="#191919" />
+		<rect x="36"  y="592" width="30" height="30" fill="#272727" />
+		<rect x="67"  y="592" width="30" height="30" fill="#303030" />
+		<rect x="98"  y="592" width="30" height="30" fill="#e0e0e0" />
+		<rect x="129" y="592" width="30" height="30" fill="#ababab" />
+		<rect x="160" y="592" width="30" height="30" fill="#bfbfbf" />
+		<rect x="191" y="592" width="30" height="30" fill="#bfbfbf" />
+		<rect x="222" y="592" width="30" height="30" fill="#b9b9b9" />
+		<rect x="253" y="592" width="30" height="30" fill="#3a3a3a" />
+		<rect x="284" y="592" width="30" height="30" fill="#323232" />
+		<rect x="315" y="592" width="30" height="30" fill="#191919" />
+		<rect x="346" y="592" width="30" height="30" fill="#1b1b1b" />
+		<rect x="377" y="592" width="30" height="30" fill="#1d1d1d" />
+		<rect x="408" y="592" width="30" height="30" fill="#232323" />
+		<rect x="5"   y="623" width="30" height="30" fill="#272727" />
+		<rect x="36"  y="623" width="30" height="30" fill="#323232" />
+		<rect x="67"  y="623" width="30" height="30" fill="#1b1b1b" />
+		<rect x="98"  y="623" width="30" height="30" fill="#cdcdcd" />
+		<rect x="129" y="623" width="30" height="30" fill="#2b2b2b" />
+		<rect x="160" y="623" width="30" height="30" fill="#2b2b2b" />
+		<rect x="191" y="623" width="30" height="30" fill="#323232" />
+		<rect x="222" y="623" width="30" height="30" fill="#bbbbbb" />
+		<rect x="253" y="623" width="30" height="30" fill="#1f1f1f" />
+		<rect x="284" y="623" width="30" height="30" fill="#2b2b2b" />
+		<rect x="315" y="623" width="30" height="30" fill="#272727" />
+		<rect x="346" y="623" width="30" height="30" fill="#212121" />
+		<rect x="377" y="623" width="30" height="30" fill="#272727" />
+		<rect x="408" y="623" width="30" height="30" fill="#343434" />
+		<rect x="5"   y="654" width="30" height="30" fill="#363636" />
+		<rect x="36"  y="654" width="30" height="30" fill="#2b2b2b" />
+		<rect x="67"  y="654" width="30" height="30" fill="#303030" />
+		<rect x="98"  y="654" width="30" height="30" fill="#cdcdcd" />
+		<rect x="129" y="654" width="30" height="30" fill="#292929" />
+		<rect x="160" y="654" width="30" height="30" fill="#232323" />
+		<rect x="191" y="654" width="30" height="30" fill="#252525" />
+		<rect x="222" y="654" width="30" height="30" fill="#bbbbbb" />
+		<rect x="253" y="654" width="30" height="30" fill="#1b1b1b" />
+		<rect x="284" y="654" width="30" height="30" fill="#3a3a3a" />
+		<rect x="315" y="654" width="30" height="30" fill="#292929" />
+		<rect x="346" y="654" width="30" height="30" fill="#2e2e2e" />
+		<rect x="377" y="654" width="30" height="30" fill="#252525" />
+		<rect x="408" y="654" width="30" height="30" fill="#323232" />
+		<rect x="5"   y="685" width="30" height="30" fill="#272727" />
+		<rect x="36"  y="685" width="30" height="30" fill="#303030" />
+		<rect x="67"  y="685" width="30" height="30" fill="#2e2e2e" />
+		<rect x="98"  y="685" width="30" height="30" fill="#dadada" />
+		<rect x="129" y="685" width="30" height="30" fill="#2e2e2e" />
+		<rect x="160" y="685" width="30" height="30" fill="#232323" />
+		<rect x="191" y="685" width="30" height="30" fill="#323232" />
+		<rect x="222" y="685" width="30" height="30" fill="#bfbfbf" />
+		<rect x="253" y="685" width="30" height="30" fill="#343434" />
+		<rect x="284" y="685" width="30" height="30" fill="#292929" />
+		<rect x="315" y="685" width="30" height="30" fill="#292929" />
+		<rect x="346" y="685" width="30" height="30" fill="#272727" />
+		<rect x="377" y="685" width="30" height="30" fill="#292929" />
+		<rect x="408" y="685" width="30" height="30" fill="#292929" />
+		<rect x="5"   y="716" width="30" height="30" fill="#323232" />
+		<rect x="36"  y="716" width="30" height="30" fill="#292929" />
+		<rect x="67"  y="716" width="30" height="30" fill="#323232" />
+		<rect x="98"  y="716" width="30" height="30" fill="#b3b3b3" />
+		<rect x="129" y="716" width="30" height="30" fill="#cbcbcb" />
+		<rect x="160" y="716" width="30" height="30" fill="#d6d6d6" />
+		<rect x="191" y="716" width="30" height="30" fill="#b1b1b1" />
+		<rect x="222" y="716" width="30" height="30" fill="#cfcfcf" />
+		<rect x="253" y="716" width="30" height="30" fill="#303030" />
+		<rect x="284" y="716" width="30" height="30" fill="#252525" />
+		<rect x="315" y="716" width="30" height="30" fill="#303030" />
+		<rect x="346" y="716" width="30" height="30" fill="#272727" />
+		<rect x="377" y="716" width="30" height="30" fill="#3c3c3c" />
+		<rect x="408" y="716" width="30" height="30" fill="#2b2b2b" />
+		<rect x="5"   y="747" width="30" height="30" fill="#2e2e2e" />
+		<rect x="36"  y="747" width="30" height="30" fill="#2e2e2e" />
+		<rect x="67"  y="747" width="30" height="30" fill="#363636" />
+		<rect x="98"  y="747" width="30" height="30" fill="#303030" />
+		<rect x="129" y="747" width="30" height="30" fill="#2e2e2e" />
+		<rect x="160" y="747" width="30" height="30" fill="#b1b1b1" />
+		<rect x="191" y="747" width="30" height="30" fill="#1d1d1d" />
+		<rect x="222" y="747" width="30" height="30" fill="#1f1f1f" />
+		<rect x="253" y="747" width="30" height="30" fill="#1f1f1f" />
+		<rect x="284" y="747" width="30" height="30" fill="#323232" />
+		<rect x="315" y="747" width="30" height="30" fill="#252525" />
+		<rect x="346" y="747" width="30" height="30" fill="#272727" />
+		<rect x="377" y="747" width="30" height="30" fill="#292929" />
+		<rect x="408" y="747" width="30" height="30" fill="#1f1f1f" />
+		<rect x="5"   y="778" width="30" height="30" fill="#191919" />
+		<rect x="36"  y="778" width="30" height="30" fill="#212121" />
+		<rect x="67"  y="778" width="30" height="30" fill="#343434" />
+		<rect x="98"  y="778" width="30" height="30" fill="#212121" />
+		<rect x="129" y="778" width="30" height="30" fill="#292929" />
+		<rect x="160" y="778" width="30" height="30" fill="#b3b3b3" />
+		<rect x="191" y="778" width="30" height="30" fill="#303030" />
+		<rect x="222" y="778" width="30" height="30" fill="#2b2b2b" />
+		<rect x="253" y="778" width="30" height="30" fill="#2e2e2e" />
+		<rect x="284" y="778" width="30" height="30" fill="#2b2b2b" />
+		<rect x="315" y="778" width="30" height="30" fill="#2b2b2b" />
+		<rect x="346" y="778" width="30" height="30" fill="#212121" />
+		<rect x="377" y="778" width="30" height="30" fill="#272727" />
+		<rect x="408" y="778" width="30" height="30" fill="#2e2e2e" />
+		<rect x="5"   y="809" width="30" height="30" fill="#292929" />
+		<rect x="36"  y="809" width="30" height="30" fill="#232323" />
+		<rect x="67"  y="809" width="30" height="30" fill="#1d1d1d" />
+		<rect x="98"  y="809" width="30" height="30" fill="#343434" />
+		<rect x="129" y="809" width="30" height="30" fill="#272727" />
+		<rect x="160" y="809" width="30" height="30" fill="#a2a2a2" />
+		<rect x="191" y="809" width="30" height="30" fill="#1d1d1d" />
+		<rect x="222" y="809" width="30" height="30" fill="#303030" />
+		<rect x="253" y="809" width="30" height="30" fill="#2b2b2b" />
+		<rect x="284" y="809" width="30" height="30" fill="#252525" />
+		<rect x="315" y="809" width="30" height="30" fill="#212121" />
+		<rect x="346" y="809" width="30" height="30" fill="#272727" />
+		<rect x="377" y="809" width="30" height="30" fill="#303030" />
+		<rect x="408" y="809" width="30" height="30" fill="#212121" />
+		<rect x="5"   y="840" width="30" height="30" fill="#2e2e2e" />
+		<rect x="36"  y="840" width="30" height="30" fill="#1f1f1f" />
+		<rect x="67"  y="840" width="30" height="30" fill="#303030" />
+		<rect x="98"  y="840" width="30" height="30" fill="#212121" />
+		<rect x="129" y="840" width="30" height="30" fill="#bfbfbf" />
+		<rect x="160" y="840" width="30" height="30" fill="#303030" />
+		<rect x="191" y="840" width="30" height="30" fill="#272727" />
+		<rect x="222" y="840" width="30" height="30" fill="#232323" />
+		<rect x="253" y="840" width="30" height="30" fill="#2b2b2b" />
+		<rect x="284" y="840" width="30" height="30" fill="#2b2b2b" />
+		<rect x="315" y="840" width="30" height="30" fill="#272727" />
+		<rect x="346" y="840" width="30" height="30" fill="#252525" />
+		<rect x="377" y="840" width="30" height="30" fill="#212121" />
+		<rect x="408" y="840" width="30" height="30" fill="#252525" />
+		<rect x="5"   y="871" width="30" height="30" fill="#323232" />
+		<rect x="36"  y="871" width="30" height="30" fill="#303030" />
+		<rect x="67"  y="871" width="30" height="30" fill="#3c3c3c" />
+		<rect x="98"  y="871" width="30" height="30" fill="#cfcfcf" />
+		<rect x="129" y="871" width="30" height="30" fill="#272727" />
+		<rect x="160" y="871" width="30" height="30" fill="#1b1b1b" />
+		<rect x="191" y="871" width="30" height="30" fill="#2e2e2e" />
+		<rect x="222" y="871" width="30" height="30" fill="#2e2e2e" />
+		<rect x="253" y="871" width="30" height="30" fill="#343434" />
+		<rect x="284" y="871" width="30" height="30" fill="#272727" />
+		<rect x="315" y="871" width="30" height="30" fill="#323232" />
+		<rect x="346" y="871" width="30" height="30" fill="#2b2b2b" />
+		<rect x="377" y="871" width="30" height="30" fill="#3c3c3c" />
+		<rect x="408" y="871" width="30" height="30" fill="#383838" />
+	</g>
+
+	<g id="conv1">
+		<rect x="688" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="841" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="135" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="237" width="50" height="50" fill="var(--conv-black)" />
+	</g>
+
+	<g id="conv2" transform="translate(0 350)">
+		<rect x="688" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="841" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="135" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="237" width="50" height="50" fill="var(--conv-black)" />
+	</g>
+
+	<g id="conv3" transform="translate(0 700)">
+		<rect x="688" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="135" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="841" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="237" width="50" height="50" fill="var(--conv-black)" />
+	</g>
+
+	<g id="conv4" transform="translate(0 1050)">
+		<rect x="688" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="135" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="841" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="237" width="50" height="50" fill="var(--conv-black)" />
+	</g>
+
+	<g id="conv5" transform="translate(1063 0)">
+		<rect x="688" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="237" width="50" height="50" fill="var(--conv-black)" />
+	</g>
+
+    <g id="conv6" transform="translate(1063 350)">
+		<rect x="688" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="84"  width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="237" width="50" height="50" fill="var(--conv-black)" />
+	</g>
+
+	<g id="conv7" transform="translate(1063 700)">
+		<rect x="688" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="790" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="237" width="50" height="50" fill="var(--conv-black)" />
+	</g>
+
+	<g id="conv8" transform="translate(1063 1050)">
+		<rect x="688" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="33"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="84"  width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="135" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="186" width="50" height="50" fill="var(--conv-white)" />
+		<rect x="892" y="186" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="688" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="739" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="790" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="841" y="237" width="50" height="50" fill="var(--conv-black)" />
+		<rect x="892" y="237" width="50" height="50" fill="var(--conv-black)" />
+	</g>
+
+	<g id="out1" fill="#262626">
+		<rect x="1192" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.000s"/></rect>
+		<rect x="1223" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.035s"/></rect>
+		<rect x="1254" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.090s"/></rect>
+		<rect x="1285" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.145s"/></rect>
+		<rect x="1316" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.200s"/></rect>
+		<rect x="1347" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.255s"/></rect>
+		<rect x="1378" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.310s"/></rect>
+		<rect x="1409" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.365s"/></rect>
+		<rect x="1440" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.420s"/></rect>
+		<rect x="1471" y="5"   width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.475s"/></rect>
+		<rect x="1192" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.500s"/></rect>
+		<rect x="1223" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.535s"/></rect>
+		<rect x="1254" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.590s"/></rect>
+		<rect x="1285" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.645s"/></rect>
+		<rect x="1316" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.700s"/></rect>
+		<rect x="1347" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.755s"/></rect>
+		<rect x="1378" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.810s"/></rect>
+		<rect x="1409" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.865s"/></rect>
+		<rect x="1440" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.920s"/></rect>
+		<rect x="1471" y="36"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+0.975s"/></rect>
+		<rect x="1192" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.000s"/></rect>
+		<rect x="1223" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.035s"/></rect>
+		<rect x="1254" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.090s"/></rect>
+		<rect x="1285" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.145s"/></rect>
+		<rect x="1316" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.200s"/></rect>
+		<rect x="1347" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.255s"/></rect>
+		<rect x="1378" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#353535" dur="0.05s" begin="marker1_move.begin+1.310s"/></rect>
+		<rect x="1409" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.365s"/></rect>
+		<rect x="1440" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.420s"/></rect>
+		<rect x="1471" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.475s"/></rect>
+		<rect x="1192" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.500s"/></rect>
+		<rect x="1223" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.535s"/></rect>
+		<rect x="1254" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#e6e6e6" dur="0.05s" begin="marker1_move.begin+1.590s"/></rect>
+		<rect x="1285" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.645s"/></rect>
+		<rect x="1316" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#2e2e2e" dur="0.05s" begin="marker1_move.begin+1.700s"/></rect>
+		<rect x="1347" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.755s"/></rect>
+		<rect x="1378" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#6e6e6e" dur="0.05s" begin="marker1_move.begin+1.810s"/></rect>
+		<rect x="1409" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.865s"/></rect>
+		<rect x="1440" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.920s"/></rect>
+		<rect x="1471" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+1.975s"/></rect>
+		<rect x="1192" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.000s"/></rect>
+		<rect x="1223" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.035s"/></rect>
+		<rect x="1254" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.090s"/></rect>
+		<rect x="1285" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.145s"/></rect>
+		<rect x="1316" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.200s"/></rect>
+		<rect x="1347" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.255s"/></rect>
+		<rect x="1378" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#262626" dur="0.05s" begin="marker1_move.begin+2.310s"/></rect>
+		<rect x="1409" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.365s"/></rect>
+		<rect x="1440" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.420s"/></rect>
+		<rect x="1471" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.475s"/></rect>
+		<rect x="1192" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.500s"/></rect>
+		<rect x="1223" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.535s"/></rect>
+		<rect x="1254" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.590s"/></rect>
+		<rect x="1285" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.645s"/></rect>
+		<rect x="1316" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.700s"/></rect>
+		<rect x="1347" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.755s"/></rect>
+		<rect x="1378" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#777777" dur="0.05s" begin="marker1_move.begin+2.810s"/></rect>
+		<rect x="1409" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.865s"/></rect>
+		<rect x="1440" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.920s"/></rect>
+		<rect x="1471" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+2.975s"/></rect>
+		<rect x="1192" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.000s"/></rect>
+		<rect x="1223" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.035s"/></rect>
+		<rect x="1254" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.090s"/></rect>
+		<rect x="1285" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.145s"/></rect>
+		<rect x="1316" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#1f1f1f" dur="0.05s" begin="marker1_move.begin+3.200s"/></rect>
+		<rect x="1347" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.255s"/></rect>
+		<rect x="1378" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#3b3b3b" dur="0.05s" begin="marker1_move.begin+3.310s"/></rect>
+		<rect x="1409" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.365s"/></rect>
+		<rect x="1440" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.420s"/></rect>
+		<rect x="1471" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.475s"/></rect>
+		<rect x="1192" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.500s"/></rect>
+		<rect x="1223" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.535s"/></rect>
+		<rect x="1254" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#222222" dur="0.05s" begin="marker1_move.begin+3.590s"/></rect>
+		<rect x="1285" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.645s"/></rect>
+		<rect x="1316" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#c6c6c6" dur="0.05s" begin="marker1_move.begin+3.700s"/></rect>
+		<rect x="1347" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.755s"/></rect>
+		<rect x="1378" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.810s"/></rect>
+		<rect x="1409" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.865s"/></rect>
+		<rect x="1440" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.920s"/></rect>
+		<rect x="1471" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+3.975s"/></rect>
+		<rect x="1192" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.000s"/></rect>
+		<rect x="1223" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.035s"/></rect>
+		<rect x="1254" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.090s"/></rect>
+		<rect x="1285" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.145s"/></rect>
+		<rect x="1316" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.200s"/></rect>
+		<rect x="1347" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.255s"/></rect>
+		<rect x="1378" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.310s"/></rect>
+		<rect x="1409" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.365s"/></rect>
+		<rect x="1440" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.420s"/></rect>
+		<rect x="1471" y="253" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.475s"/></rect>
+		<rect x="1192" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.500s"/></rect>
+		<rect x="1223" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.535s"/></rect>
+		<rect x="1254" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.590s"/></rect>
+		<rect x="1285" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#1f1f1f" dur="0.05s" begin="marker1_move.begin+4.645s"/></rect>
+		<rect x="1316" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#323232" dur="0.05s" begin="marker1_move.begin+4.700s"/></rect>
+		<rect x="1347" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.755s"/></rect>
+		<rect x="1378" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.810s"/></rect>
+		<rect x="1409" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.865s"/></rect>
+		<rect x="1440" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.920s"/></rect>
+		<rect x="1471" y="284" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker1_move.begin+4.975s"/></rect>
+	</g>
+
+	<g id="out2" transform="translate(0 350)">
+		<rect x="1192" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1223" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1254" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1285" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1316" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1347" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1378" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1409" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1440" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1471" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1192" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1223" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1254" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1285" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1316" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1347" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1378" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1409" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1440" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1471" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1192" y="67"  width="30" height="30" fill="#424242" />
+		<rect x="1223" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1254" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1285" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1316" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1347" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1378" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1409" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1440" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1471" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1192" y="98"  width="30" height="30" fill="#848484" />
+		<rect x="1223" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1254" y="98"  width="30" height="30" fill="#262626" />
+		<rect x="1285" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1316" y="98"  width="30" height="30" fill="#d9d9d9" />
+		<rect x="1347" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1378" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1409" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1440" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1471" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1192" y="129" width="30" height="30" fill="#3d3d3d" />
+		<rect x="1223" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="160" width="30" height="30" fill="#696969" />
+		<rect x="1223" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="160" width="30" height="30" fill="#1a1a1a" />
+		<rect x="1347" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="191" width="30" height="30" fill="#323232" />
+		<rect x="1223" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="191" width="30" height="30" fill="#1f1f1f" />
+		<rect x="1285" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="222" width="30" height="30" fill="#c1c1c1" />
+		<rect x="1285" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="222" width="30" height="30" fill="#232323" />
+		<rect x="1347" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="284" width="30" height="30" fill="#191919" />
+	</g>
+
+   	<g id="out3" transform="translate(0 700)">
+		<rect x="1192" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1223" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1254" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1285" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1316" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1347" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1378" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1409" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1440" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1471" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1192" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1223" y="36"  width="30" height="30" fill="#3f3f3f" />
+		<rect x="1254" y="36"  width="30" height="30" fill="#666666" />
+		<rect x="1285" y="36"  width="30" height="30" fill="#232323" />
+		<rect x="1316" y="36"  width="30" height="30" fill="#717171" />
+		<rect x="1347" y="36"  width="30" height="30" fill="#3d3d3d" />
+		<rect x="1378" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1409" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1440" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1471" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1192" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1223" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1254" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1285" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1316" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1347" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1378" y="67"  width="30" height="30" fill="#2b2b2b" />
+		<rect x="1409" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1440" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1471" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1192" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1223" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1254" y="98"  width="30" height="30" fill="#414141" />
+		<rect x="1285" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1316" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1347" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1378" y="98"  width="30" height="30" fill="#616161" />
+		<rect x="1409" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1440" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1471" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1192" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="129" width="30" height="30" fill="#313131" />
+		<rect x="1409" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="160" width="30" height="30" fill="#dadada" />
+		<rect x="1285" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="160" width="30" height="30" fill="#202020" />
+		<rect x="1347" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="160" width="30" height="30" fill="#777777" />
+		<rect x="1409" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="191" width="30" height="30" fill="#333333" />
+		<rect x="1409" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="222" width="30" height="30" fill="#1c1c1c" />
+		<rect x="1347" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="284" width="30" height="30" fill="#2b2b2b" />
+		<rect x="1223" y="284" width="30" height="30" fill="#444444" />
+		<rect x="1254" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="284" width="30" height="30" fill="#292929" />
+		<rect x="1347" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="284" width="30" height="30" fill="#191919" />
+	</g>
+   
+	<g id="out4" transform="translate(0 1050)">
+		<rect x="1192" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1223" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1254" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1285" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1316" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1347" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1378" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1409" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1440" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1471" y="5"   width="30" height="30" fill="#191919" />
+		<rect x="1192" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1223" y="36"  width="30" height="30" fill="#373737" />
+		<rect x="1254" y="36"  width="30" height="30" fill="#707070" />
+		<rect x="1285" y="36"  width="30" height="30" fill="#2a2a2a" />
+		<rect x="1316" y="36"  width="30" height="30" fill="#707070" />
+		<rect x="1347" y="36"  width="30" height="30" fill="#3a3a3a" />
+		<rect x="1378" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1409" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1440" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1471" y="36"  width="30" height="30" fill="#191919" />
+		<rect x="1192" y="67"  width="30" height="30" fill="#424242" />
+		<rect x="1223" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1254" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1285" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1316" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1347" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1378" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1409" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1440" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1471" y="67"  width="30" height="30" fill="#191919" />
+		<rect x="1192" y="98"  width="30" height="30" fill="#868686" />
+		<rect x="1223" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1254" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1285" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1316" y="98"  width="30" height="30" fill="#262626" />
+		<rect x="1347" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1378" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1409" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1440" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1471" y="98"  width="30" height="30" fill="#191919" />
+		<rect x="1192" y="129" width="30" height="30" fill="#464646" />
+		<rect x="1223" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="129" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="160" width="30" height="30" fill="#696969" />
+		<rect x="1223" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="160" width="30" height="30" fill="#d2d2d2" />
+		<rect x="1347" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="160" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="191" width="30" height="30" fill="#353535" />
+		<rect x="1223" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="191" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="222" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1223" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1254" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1285" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="253" width="30" height="30" fill="#191919" />
+		<rect x="1192" y="284" width="30" height="30" fill="#353535" />
+		<rect x="1223" y="284" width="30" height="30" fill="#444444" />
+		<rect x="1254" y="284" width="30" height="30" fill="#828282" />
+		<rect x="1285" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1316" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1347" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1378" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1409" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1440" y="284" width="30" height="30" fill="#191919" />
+		<rect x="1471" y="284" width="30" height="30" fill="#191919" />
+	</g>
+   
+	<g id="out5" fill="#262626" transform="translate(1063 525)">
+		<rect x="1192" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.000s"/></rect>
+		<rect x="1223" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.067s"/></rect>
+		<rect x="1254" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.135s"/></rect>
+		<rect x="1285" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.202s"/></rect>
+		<rect x="1316" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.270s"/></rect>
+		<rect x="1347" y="67"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.337s"/></rect>
+		<rect x="1192" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.405s"/></rect>
+		<rect x="1223" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.472s"/></rect>
+		<rect x="1254" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.540s"/></rect>
+		<rect x="1285" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.608s"/></rect>
+		<rect x="1316" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.675s"/></rect>
+		<rect x="1347" y="98"  width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.743s"/></rect>
+		<rect x="1192" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.810s"/></rect>
+		<rect x="1223" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#e6e6e6" dur="0.05s" begin="marker2_move.begin+0.878s"/></rect>
+		<rect x="1254" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+0.945s"/></rect>
+		<rect x="1285" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.013s"/></rect>
+		<rect x="1316" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.081s"/></rect>
+		<rect x="1347" y="129" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#202020" dur="0.05s" begin="marker2_move.begin+1.148s"/></rect>
+		<rect x="1192" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.216s"/></rect>
+		<rect x="1223" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.283s"/></rect>
+		<rect x="1254" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.351s"/></rect>
+		<rect x="1285" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.418s"/></rect>
+		<rect x="1316" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.486s"/></rect>
+		<rect x="1347" y="160" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.554s"/></rect>
+		<rect x="1192" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.621s"/></rect>
+		<rect x="1223" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.689s"/></rect>
+		<rect x="1254" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.756s"/></rect>
+		<rect x="1285" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.824s"/></rect>
+		<rect x="1316" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.891s"/></rect>
+		<rect x="1347" y="191" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+1.959s"/></rect>
+		<rect x="1192" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+2.027s"/></rect>
+		<rect x="1223" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+2.094s"/></rect>
+		<rect x="1254" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+2.162s"/></rect>
+		<rect x="1285" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+2.229s"/></rect>
+		<rect x="1316" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+2.297s"/></rect>
+		<rect x="1347" y="222" width="30" height="30"><animate attributeName="fill" fill="freeze" from="#262626" to="#191919" dur="0.05s" begin="marker2_move.begin+2.364s"/></rect>
+	</g>
+
+	<g transform="translate(0 -62)">
+	    <g id="markers1" opacity="0">
+	        <animate
+				id="marker1_show" attributeName="opacity" 
+				begin="indefinite" dur="750ms" fill="freeze"
+				values="0 ; 1"
+				keyTimes="0 ; 1"
+				calcMode="spline"
+				keySplines="0.25 0.1 0.25 1.0"
+			/>
+	        <animate
+				id="marker1_hide" attributeName="opacity" 
+				begin="marker1_move.end+150ms" dur="750ms" fill="freeze" 
+				values="1 ; 0"
+				keyTimes="0 ; 1"
+				calcMode="spline"
+				keySplines="0.25 0.1 0.25 1.0"
+			/>
+		
+	        <polygon fill="#5875a4" fill-opacity=".4" points="688,95 688,349 159,684 159,530">
+	            <animate
+	                begin="marker1_move.begin"
+	                dur="5s"
+	                fill="freeze"
+	                attributeName="points"
+	                values="
+	                    688,95 688,349 159,684 159,530; 688,95 688,349 190,684 190,530; 688,95 688,349 221,684 221,530; 688,95 688,349 252,684 252,530; 688,95 688,349 283,684 283,530; 688,95 688,349 314,684 314,530; 688,95 688,349 345,684 345,530; 688,95 688,349 376,684 376,530; 688,95 688,349 407,684 407,530; 688,95 688,349 438,684 438,530;
+	                    688,95 688,349 159,715 159,561; 688,95 688,349 190,715 190,561; 688,95 688,349 221,715 221,561; 688,95 688,349 252,715 252,561; 688,95 688,349 283,715 283,561; 688,95 688,349 314,715 314,561; 688,95 688,349 345,715 345,561; 688,95 688,349 376,715 376,561; 688,95 688,349 407,715 407,561; 688,95 688,349 438,715 438,561;
+	                    688,95 688,349 159,746 159,592; 688,95 688,349 190,746 190,592; 688,95 688,349 221,746 221,592; 688,95 688,349 252,746 252,592; 688,95 688,349 283,746 283,592; 688,95 688,349 314,746 314,592; 688,95 688,349 345,746 345,592; 688,95 688,349 376,746 376,592; 688,95 688,349 407,746 407,592; 688,95 688,349 438,746 438,592;
+	                    688,95 688,349 159,777 159,623; 688,95 688,349 190,777 190,623; 688,95 688,349 221,777 221,623; 688,95 688,349 252,777 252,623; 688,95 688,349 283,777 283,623; 688,95 688,349 314,777 314,623; 688,95 688,349 345,777 345,623; 688,95 688,349 376,777 376,623; 688,95 688,349 407,777 407,623; 688,95 688,349 438,777 438,623;
+	                    688,95 688,349 159,808 159,654; 688,95 688,349 190,808 190,654; 688,95 688,349 221,808 221,654; 688,95 688,349 252,808 252,654; 688,95 688,349 283,808 283,654; 688,95 688,349 314,808 314,654; 688,95 688,349 345,808 345,654; 688,95 688,349 376,808 376,654; 688,95 688,349 407,808 407,654; 688,95 688,349 438,808 438,654;
+	                    688,95 688,349 159,839 159,685; 688,95 688,349 190,839 190,685; 688,95 688,349 221,839 221,685; 688,95 688,349 252,839 252,685; 688,95 688,349 283,839 283,685; 688,95 688,349 314,839 314,685; 688,95 688,349 345,839 345,685; 688,95 688,349 376,839 376,685; 688,95 688,349 407,839 407,685; 688,95 688,349 438,839 438,685;
+	                    688,95 688,349 159,870 159,716; 688,95 688,349 190,870 190,716; 688,95 688,349 221,870 221,716; 688,95 688,349 252,870 252,716; 688,95 688,349 283,870 283,716; 688,95 688,349 314,870 314,716; 688,95 688,349 345,870 345,716; 688,95 688,349 376,870 376,716; 688,95 688,349 407,870 407,716; 688,95 688,349 438,870 438,716;
+	                    688,95 688,349 159,901 159,747; 688,95 688,349 190,901 190,747; 688,95 688,349 221,901 221,747; 688,95 688,349 252,901 252,747; 688,95 688,349 283,901 283,747; 688,95 688,349 314,901 314,747; 688,95 688,349 345,901 345,747; 688,95 688,349 376,901 376,747; 688,95 688,349 407,901 407,747; 688,95 688,349 438,901 438,747;
+	                    688,95 688,349 159,932 159,778; 688,95 688,349 190,932 190,778; 688,95 688,349 221,932 221,778; 688,95 688,349 252,932 252,778; 688,95 688,349 283,932 283,778; 688,95 688,349 314,932 314,778; 688,95 688,349 345,932 345,778; 688,95 688,349 376,932 376,778; 688,95 688,349 407,932 407,778; 688,95 688,349 438,932 438,778;
+	                    688,95 688,349 159,963 159,809; 688,95 688,349 190,963 190,809; 688,95 688,349 221,963 221,809; 688,95 688,349 252,963 252,809; 688,95 688,349 283,963 283,809; 688,95 688,349 314,963 314,809; 688,95 688,349 345,963 345,809; 688,95 688,349 376,963 376,809; 688,95 688,349 407,963 407,809; 688,95 688,349 438,963 438,809;
+	                "
+	                keyTimes="
+	                    0   ; 0.011 ; 0.022 ; 0.033 ; 0.044 ; 0.055 ; 0.066 ; 0.077 ; 0.088 ; 0.1 ;
+	                    0.1 ; 0.111 ; 0.122 ; 0.133 ; 0.144 ; 0.155 ; 0.166 ; 0.177 ; 0.188 ; 0.2 ;
+	                    0.2 ; 0.211 ; 0.222 ; 0.233 ; 0.244 ; 0.255 ; 0.266 ; 0.277 ; 0.288 ; 0.3 ;
+	                    0.3 ; 0.311 ; 0.322 ; 0.333 ; 0.344 ; 0.355 ; 0.366 ; 0.377 ; 0.388 ; 0.4 ;
+	                    0.4 ; 0.411 ; 0.422 ; 0.433 ; 0.444 ; 0.455 ; 0.466 ; 0.477 ; 0.488 ; 0.5 ;
+	                    0.5 ; 0.511 ; 0.522 ; 0.533 ; 0.544 ; 0.555 ; 0.566 ; 0.577 ; 0.588 ; 0.6 ;
+	                    0.6 ; 0.611 ; 0.622 ; 0.633 ; 0.644 ; 0.655 ; 0.666 ; 0.677 ; 0.688 ; 0.7 ;
+	                    0.7 ; 0.711 ; 0.722 ; 0.733 ; 0.744 ; 0.755 ; 0.766 ; 0.777 ; 0.788 ; 0.8 ;
+	                    0.8 ; 0.811 ; 0.822 ; 0.833 ; 0.844 ; 0.855 ; 0.866 ; 0.877 ; 0.888 ; 0.9 ;
+	                    0.9 ; 0.911 ; 0.922 ; 0.933 ; 0.944 ; 0.955 ; 0.966 ; 0.977 ; 0.988 ; 1
+	                "
+	            />
+				<set attributeName="points" to="688,95 688,349 159,684 159,530" begin="marker1_hide.end+750ms" dur="indefinite" />
+	        </polygon>
+
+	        <rect x="5" y="530" width="154" height="154" fill="none" stroke="#4c72b0" stroke-width="5">
+	            <animateMotion
+	                id="marker1_move"
+	                begin="click"
+	                dur="5s"
+	                fill="freeze"
+	                path="m0,0 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279"
+	            />
+				<animateMotion begin="marker1_hide.end+750ms" dur="1ms" fill="freeze" path="m0,0" />
+	        </rect>
+        
+	        <polygon fill="#5875a4" fill-opacity=".4" points="942,95 942,349 1192,97 1192,67">
+	            <animate
+	                begin="marker1_move.begin"
+	                dur="5s"
+	                fill="freeze"
+	                attributeName="points"
+	                values="
+	                    942,95 942,349 1192,97 1192,67;   942,95 942,349 1223,97 1223,67;   942,95 942,349 1254,97 1254,67;   942,95 942,349 1285,97 1285,67;   942,95 942,349 1316,97 1316,67;   942,95 942,349 1347,97 1347,67;   942,95 942,349 1378,97 1378,67;   942,95 942,349 1409,97 1409,67;   942,95 942,349 1440,97 1440,67;   942,95 942,349 1471,97 1471,67;
+	                    942,95 942,349 1192,128 1192,98;  942,95 942,349 1223,128 1223,98;  942,95 942,349 1254,128 1254,98;  942,95 942,349 1285,128 1285,98;  942,95 942,349 1316,128 1316,98;  942,95 942,349 1347,128 1347,98;  942,95 942,349 1378,128 1378,98;  942,95 942,349 1409,128 1409,98;  942,95 942,349 1440,128 1440,98;  942,95 942,349 1471,128 1471,98;
+	                    942,95 942,349 1192,159 1192,129; 942,95 942,349 1223,159 1223,129; 942,95 942,349 1254,159 1254,129; 942,95 942,349 1285,159 1285,129; 942,95 942,349 1316,159 1316,129; 942,95 942,349 1347,159 1347,129; 942,95 942,349 1378,159 1378,129; 942,95 942,349 1409,159 1409,129; 942,95 942,349 1440,159 1440,129; 942,95 942,349 1471,159 1471,129;
+	                    942,95 942,349 1192,190 1192,160; 942,95 942,349 1223,190 1223,160; 942,95 942,349 1254,190 1254,160; 942,95 942,349 1285,190 1285,160; 942,95 942,349 1316,190 1316,160; 942,95 942,349 1347,190 1347,160; 942,95 942,349 1378,190 1378,160; 942,95 942,349 1409,190 1409,160; 942,95 942,349 1440,190 1440,160; 942,95 942,349 1471,190 1471,160;
+	                    942,95 942,349 1192,221 1192,191; 942,95 942,349 1223,221 1223,191; 942,95 942,349 1254,221 1254,191; 942,95 942,349 1285,221 1285,191; 942,95 942,349 1316,221 1316,191; 942,95 942,349 1347,221 1347,191; 942,95 942,349 1378,221 1378,191; 942,95 942,349 1409,221 1409,191; 942,95 942,349 1440,221 1440,191; 942,95 942,349 1471,221 1471,191;
+	                    942,95 942,349 1192,252 1192,222; 942,95 942,349 1223,252 1223,222; 942,95 942,349 1254,252 1254,222; 942,95 942,349 1285,252 1285,222; 942,95 942,349 1316,252 1316,222; 942,95 942,349 1347,252 1347,222; 942,95 942,349 1378,252 1378,222; 942,95 942,349 1409,252 1409,222; 942,95 942,349 1440,252 1440,222; 942,95 942,349 1471,252 1471,222;
+	                    942,95 942,349 1192,283 1192,253; 942,95 942,349 1223,283 1223,253; 942,95 942,349 1254,283 1254,253; 942,95 942,349 1285,283 1285,253; 942,95 942,349 1316,283 1316,253; 942,95 942,349 1347,283 1347,253; 942,95 942,349 1378,283 1378,253; 942,95 942,349 1409,283 1409,253; 942,95 942,349 1440,283 1440,253; 942,95 942,349 1471,283 1471,253;
+	                    942,95 942,349 1192,314 1192,284; 942,95 942,349 1223,314 1223,284; 942,95 942,349 1254,314 1254,284; 942,95 942,349 1285,314 1285,284; 942,95 942,349 1316,314 1316,284; 942,95 942,349 1347,314 1347,284; 942,95 942,349 1378,314 1378,284; 942,95 942,349 1409,314 1409,284; 942,95 942,349 1440,314 1440,284; 942,95 942,349 1471,314 1471,284;
+	                    942,95 942,349 1192,345 1192,315; 942,95 942,349 1223,345 1223,315; 942,95 942,349 1254,345 1254,315; 942,95 942,349 1285,345 1285,315; 942,95 942,349 1316,345 1316,315; 942,95 942,349 1347,345 1347,315; 942,95 942,349 1378,345 1378,315; 942,95 942,349 1409,345 1409,315; 942,95 942,349 1440,345 1440,315; 942,95 942,349 1471,345 1471,315;
+	                    942,95 942,349 1192,376 1192,346; 942,95 942,349 1223,376 1223,346; 942,95 942,349 1254,376 1254,346; 942,95 942,349 1285,376 1285,346; 942,95 942,349 1316,376 1316,346; 942,95 942,349 1347,376 1347,346; 942,95 942,349 1378,376 1378,346; 942,95 942,349 1409,376 1409,346; 942,95 942,349 1440,376 1440,346; 942,95 942,349 1471,376 1471,346;
+	                "
+	                keyTimes="
+	                    0   ; 0.011 ; 0.022 ; 0.033 ; 0.044 ; 0.055 ; 0.066 ; 0.077 ; 0.088 ; 0.1 ;
+	                    0.1 ; 0.111 ; 0.122 ; 0.133 ; 0.144 ; 0.155 ; 0.166 ; 0.177 ; 0.188 ; 0.2 ;
+	                    0.2 ; 0.211 ; 0.222 ; 0.233 ; 0.244 ; 0.255 ; 0.266 ; 0.277 ; 0.288 ; 0.3 ;
+	                    0.3 ; 0.311 ; 0.322 ; 0.333 ; 0.344 ; 0.355 ; 0.366 ; 0.377 ; 0.388 ; 0.4 ;
+	                    0.4 ; 0.411 ; 0.422 ; 0.433 ; 0.444 ; 0.455 ; 0.466 ; 0.477 ; 0.488 ; 0.5 ;
+	                    0.5 ; 0.511 ; 0.522 ; 0.533 ; 0.544 ; 0.555 ; 0.566 ; 0.577 ; 0.588 ; 0.6 ;
+	                    0.6 ; 0.611 ; 0.622 ; 0.633 ; 0.644 ; 0.655 ; 0.666 ; 0.677 ; 0.688 ; 0.7 ;
+	                    0.7 ; 0.711 ; 0.722 ; 0.733 ; 0.744 ; 0.755 ; 0.766 ; 0.777 ; 0.788 ; 0.8 ;
+	                    0.8 ; 0.811 ; 0.822 ; 0.833 ; 0.844 ; 0.855 ; 0.866 ; 0.877 ; 0.888 ; 0.9 ;
+	                    0.9 ; 0.911 ; 0.922 ; 0.933 ; 0.944 ; 0.955 ; 0.966 ; 0.977 ; 0.988 ; 1
+	                "
+	            />
+				<set attributeName="points" to="942,95 942,349 1192,97 1192,67" begin="marker1_hide.end+750ms" dur="indefinite" />
+	        </polygon>
+
+	        <rect x="1192" y="67" width="30" height="30" fill="none" stroke="#4c72b0" stroke-width="5">
+	            <animateMotion
+	                begin="marker1_move.begin"
+	                dur="5s"
+	                fill="freeze"
+	                path="m0,0 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279 m-279,31 h279"
+	            />
+				<animateMotion begin="marker1_hide.end+750ms" dur="1ms" fill="freeze" path="m0,0" />
+	        </rect>
+	    </g>
+
+		<g id="markers2" opacity="0">
+	        <animate
+				id="marker2_show" attributeName="opacity" 
+				begin="indefinite" dur="750ms" fill="freeze"
+				values="0 ; 1"
+				keyTimes="0 ; 1"
+				calcMode="spline"
+				keySplines="0.25 0.1 0.25 1.0"
+			/>
+	        <animate
+				id="marker2_hide" attributeName="opacity" 
+				begin="marker2_move.end+150ms" dur="750ms" fill="freeze"
+				values="1 ; 0"
+				keyTimes="0 ; 1"
+				calcMode="spline"
+				keySplines="0.25 0.1 0.25 1.0"
+			/>
+
+			<g>
+				<polygon fill="#5875a4" fill-opacity=".4" points="1751,95 1751,349 1346,221 1346,67">
+					<animate
+						begin="marker2_move.begin"
+						dur="2.5s"
+						fill="freeze"
+						attributeName="points"
+						values="
+							1751,95 1751,349 1346,221 1346,67;  1751,95 1751,349 1377,221 1377,67;  1751,95 1751,349 1408,221 1408,67;  1751,95 1751,349 1439,221 1439,67;  1751,95 1751,349 1470,221 1470,67;  1751,95 1751,349 1501,221 1501,67; 
+							1751,95 1751,349 1346,252 1346,98;  1751,95 1751,349 1377,252 1377,98;  1751,95 1751,349 1408,252 1408,98;  1751,95 1751,349 1439,252 1439,98;  1751,95 1751,349 1470,252 1470,98;  1751,95 1751,349 1501,252 1501,98; 
+							1751,95 1751,349 1346,283 1346,129; 1751,95 1751,349 1377,283 1377,129; 1751,95 1751,349 1408,283 1408,129; 1751,95 1751,349 1439,283 1439,129; 1751,95 1751,349 1470,283 1470,129; 1751,95 1751,349 1501,283 1501,129; 
+							1751,95 1751,349 1346,314 1346,160; 1751,95 1751,349 1377,314 1377,160; 1751,95 1751,349 1408,314 1408,160; 1751,95 1751,349 1439,314 1439,160; 1751,95 1751,349 1470,314 1470,160; 1751,95 1751,349 1501,314 1501,160; 
+							1751,95 1751,349 1346,345 1346,191; 1751,95 1751,349 1377,345 1377,191; 1751,95 1751,349 1408,345 1408,191; 1751,95 1751,349 1439,345 1439,191; 1751,95 1751,349 1470,345 1470,191; 1751,95 1751,349 1501,345 1501,191; 
+							1751,95 1751,349 1346,376 1346,222; 1751,95 1751,349 1377,376 1377,222; 1751,95 1751,349 1408,376 1408,222; 1751,95 1751,349 1439,376 1439,222; 1751,95 1751,349 1470,376 1470,222; 1751,95 1751,349 1501,376 1501,222; 
+						"
+						keyTimes="
+							0     ; 0.032 ; 0.064 ; 0.096 ; 0.128 ; 0.16  ;
+							0.16  ; 0.192 ; 0.224 ; 0.256 ; 0.288 ; 0.33  ;
+							0.33  ; 0.362 ; 0.394 ; 0.426 ; 0.458 ; 0.5   ;
+							0.5   ; 0.532 ; 0.564 ; 0.596 ; 0.628 ; 0.66  ;
+							0.66  ; 0.692 ; 0.724 ; 0.756 ; 0.788 ; 0.83  ;
+							0.83  ; 0.862 ; 0.894 ; 0.926 ; 0.958 ; 1
+						"
+					/>
+					<set attributeName="points" to="1751,95 1751,349 1346,221 1346,67" begin="marker2_hide.end+750ms" dur="indefinite" />
+				</polygon>
+
+				<rect x="1192" y="67" width="154" height="154" fill="none" stroke="#4c72b0" stroke-width="5">
+					<animateMotion
+						id="marker2_move"
+						begin="click"
+						dur="2.5s"
+						fill="freeze"
+						path="m0,0 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155"
+					/>
+					<animateMotion begin="marker2_hide.end+750ms" dur="1ms" fill="freeze" path="m0,0" />
+				</rect>
+			</g>
+
+			<g transform="translate(0 350)">
+				<polygon fill="#5875a4" fill-opacity=".4" points="1751,95 1751,349 1346,221 1346,67">
+					<animate
+						begin="marker2_move.begin"
+						dur="2.5s"
+						fill="freeze"
+						attributeName="points"
+						values="
+							1751,95 1751,349 1346,221 1346,67;  1751,95 1751,349 1377,221 1377,67;  1751,95 1751,349 1408,221 1408,67;  1751,95 1751,349 1439,221 1439,67;  1751,95 1751,349 1470,221 1470,67;  1751,95 1751,349 1501,221 1501,67; 
+							1751,95 1751,349 1346,252 1346,98;  1751,95 1751,349 1377,252 1377,98;  1751,95 1751,349 1408,252 1408,98;  1751,95 1751,349 1439,252 1439,98;  1751,95 1751,349 1470,252 1470,98;  1751,95 1751,349 1501,252 1501,98; 
+							1751,95 1751,349 1346,283 1346,129; 1751,95 1751,349 1377,283 1377,129; 1751,95 1751,349 1408,283 1408,129; 1751,95 1751,349 1439,283 1439,129; 1751,95 1751,349 1470,283 1470,129; 1751,95 1751,349 1501,283 1501,129; 
+							1751,95 1751,349 1346,314 1346,160; 1751,95 1751,349 1377,314 1377,160; 1751,95 1751,349 1408,314 1408,160; 1751,95 1751,349 1439,314 1439,160; 1751,95 1751,349 1470,314 1470,160; 1751,95 1751,349 1501,314 1501,160; 
+							1751,95 1751,349 1346,345 1346,191; 1751,95 1751,349 1377,345 1377,191; 1751,95 1751,349 1408,345 1408,191; 1751,95 1751,349 1439,345 1439,191; 1751,95 1751,349 1470,345 1470,191; 1751,95 1751,349 1501,345 1501,191; 
+							1751,95 1751,349 1346,376 1346,222; 1751,95 1751,349 1377,376 1377,222; 1751,95 1751,349 1408,376 1408,222; 1751,95 1751,349 1439,376 1439,222; 1751,95 1751,349 1470,376 1470,222; 1751,95 1751,349 1501,376 1501,222; 
+						"
+						keyTimes="
+							0     ; 0.032 ; 0.064 ; 0.096 ; 0.128 ; 0.16  ;
+							0.16  ; 0.192 ; 0.224 ; 0.256 ; 0.288 ; 0.33  ;
+							0.33  ; 0.362 ; 0.394 ; 0.426 ; 0.458 ; 0.5   ;
+							0.5   ; 0.532 ; 0.564 ; 0.596 ; 0.628 ; 0.66  ;
+							0.66  ; 0.692 ; 0.724 ; 0.756 ; 0.788 ; 0.83  ;
+							0.83  ; 0.862 ; 0.894 ; 0.926 ; 0.958 ; 1
+						"
+					/>
+					<set attributeName="points" to="1751,95 1751,349 1346,221 1346,67" begin="marker2_hide.end+750ms" dur="indefinite" />
+				</polygon>
+
+				<rect x="1192" y="67" width="154" height="154" fill="none" stroke="#4c72b0" stroke-width="5">
+					<animateMotion
+						begin="marker2_move.begin"
+						dur="2.5s"
+						fill="freeze"
+						path="m0,0 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155"
+					/>
+					<animateMotion begin="marker2_hide.end+750ms" dur="1ms" fill="freeze" path="m0,0" />
+				</rect>
+			</g>
+
+			<g transform="translate(0 700)">
+				<polygon fill="#5875a4" fill-opacity=".4" points="1751,95 1751,349 1346,221 1346,67">
+					<animate
+						begin="marker2_move.begin"
+						dur="2.5s"
+						fill="freeze"
+						attributeName="points"
+						values="
+							1751,95 1751,349 1346,221 1346,67;  1751,95 1751,349 1377,221 1377,67;  1751,95 1751,349 1408,221 1408,67;  1751,95 1751,349 1439,221 1439,67;  1751,95 1751,349 1470,221 1470,67;  1751,95 1751,349 1501,221 1501,67; 
+							1751,95 1751,349 1346,252 1346,98;  1751,95 1751,349 1377,252 1377,98;  1751,95 1751,349 1408,252 1408,98;  1751,95 1751,349 1439,252 1439,98;  1751,95 1751,349 1470,252 1470,98;  1751,95 1751,349 1501,252 1501,98; 
+							1751,95 1751,349 1346,283 1346,129; 1751,95 1751,349 1377,283 1377,129; 1751,95 1751,349 1408,283 1408,129; 1751,95 1751,349 1439,283 1439,129; 1751,95 1751,349 1470,283 1470,129; 1751,95 1751,349 1501,283 1501,129; 
+							1751,95 1751,349 1346,314 1346,160; 1751,95 1751,349 1377,314 1377,160; 1751,95 1751,349 1408,314 1408,160; 1751,95 1751,349 1439,314 1439,160; 1751,95 1751,349 1470,314 1470,160; 1751,95 1751,349 1501,314 1501,160; 
+							1751,95 1751,349 1346,345 1346,191; 1751,95 1751,349 1377,345 1377,191; 1751,95 1751,349 1408,345 1408,191; 1751,95 1751,349 1439,345 1439,191; 1751,95 1751,349 1470,345 1470,191; 1751,95 1751,349 1501,345 1501,191; 
+							1751,95 1751,349 1346,376 1346,222; 1751,95 1751,349 1377,376 1377,222; 1751,95 1751,349 1408,376 1408,222; 1751,95 1751,349 1439,376 1439,222; 1751,95 1751,349 1470,376 1470,222; 1751,95 1751,349 1501,376 1501,222; 
+						"
+						keyTimes="
+							0     ; 0.032 ; 0.064 ; 0.096 ; 0.128 ; 0.16  ;
+							0.16  ; 0.192 ; 0.224 ; 0.256 ; 0.288 ; 0.33  ;
+							0.33  ; 0.362 ; 0.394 ; 0.426 ; 0.458 ; 0.5   ;
+							0.5   ; 0.532 ; 0.564 ; 0.596 ; 0.628 ; 0.66  ;
+							0.66  ; 0.692 ; 0.724 ; 0.756 ; 0.788 ; 0.83  ;
+							0.83  ; 0.862 ; 0.894 ; 0.926 ; 0.958 ; 1
+						"
+					/>
+					<set attributeName="points" to="1751,95 1751,349 1346,221 1346,67" begin="marker2_hide.end+750ms" dur="indefinite" />
+				</polygon>
+
+				<rect x="1192" y="67" width="154" height="154" fill="none" stroke="#4c72b0" stroke-width="5">
+					<animateMotion
+						begin="marker2_move.begin"
+						dur="2.5s"
+						fill="freeze"
+						path="m0,0 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155"
+					/>
+					<animateMotion begin="marker2_hide.end+750ms" dur="1ms" fill="freeze" path="m0,0" />
+				</rect>
+			</g>
+
+			<g transform="translate(0 1050)">
+				<polygon fill="#5875a4" fill-opacity=".4" points="1751,95 1751,349 1346,221 1346,67">
+					<animate
+						begin="marker2_move.begin"
+						dur="2.5s"
+						fill="freeze"
+						attributeName="points"
+						values="
+							1751,95 1751,349 1346,221 1346,67;  1751,95 1751,349 1377,221 1377,67;  1751,95 1751,349 1408,221 1408,67;  1751,95 1751,349 1439,221 1439,67;  1751,95 1751,349 1470,221 1470,67;  1751,95 1751,349 1501,221 1501,67; 
+							1751,95 1751,349 1346,252 1346,98;  1751,95 1751,349 1377,252 1377,98;  1751,95 1751,349 1408,252 1408,98;  1751,95 1751,349 1439,252 1439,98;  1751,95 1751,349 1470,252 1470,98;  1751,95 1751,349 1501,252 1501,98; 
+							1751,95 1751,349 1346,283 1346,129; 1751,95 1751,349 1377,283 1377,129; 1751,95 1751,349 1408,283 1408,129; 1751,95 1751,349 1439,283 1439,129; 1751,95 1751,349 1470,283 1470,129; 1751,95 1751,349 1501,283 1501,129; 
+							1751,95 1751,349 1346,314 1346,160; 1751,95 1751,349 1377,314 1377,160; 1751,95 1751,349 1408,314 1408,160; 1751,95 1751,349 1439,314 1439,160; 1751,95 1751,349 1470,314 1470,160; 1751,95 1751,349 1501,314 1501,160; 
+							1751,95 1751,349 1346,345 1346,191; 1751,95 1751,349 1377,345 1377,191; 1751,95 1751,349 1408,345 1408,191; 1751,95 1751,349 1439,345 1439,191; 1751,95 1751,349 1470,345 1470,191; 1751,95 1751,349 1501,345 1501,191; 
+							1751,95 1751,349 1346,376 1346,222; 1751,95 1751,349 1377,376 1377,222; 1751,95 1751,349 1408,376 1408,222; 1751,95 1751,349 1439,376 1439,222; 1751,95 1751,349 1470,376 1470,222; 1751,95 1751,349 1501,376 1501,222; 
+						"
+						keyTimes="
+							0     ; 0.032 ; 0.064 ; 0.096 ; 0.128 ; 0.16  ;
+							0.16  ; 0.192 ; 0.224 ; 0.256 ; 0.288 ; 0.33  ;
+							0.33  ; 0.362 ; 0.394 ; 0.426 ; 0.458 ; 0.5   ;
+							0.5   ; 0.532 ; 0.564 ; 0.596 ; 0.628 ; 0.66  ;
+							0.66  ; 0.692 ; 0.724 ; 0.756 ; 0.788 ; 0.83  ;
+							0.83  ; 0.862 ; 0.894 ; 0.926 ; 0.958 ; 1
+						"
+					/>
+					<set attributeName="points" to="1751,95 1751,349 1346,221 1346,67" begin="marker2_hide.end+750ms" dur="indefinite" />
+				</polygon>
+
+				<rect x="1192" y="67" width="154" height="154" fill="none" stroke="#4c72b0" stroke-width="5">
+					<animateMotion
+						begin="marker2_move.begin"
+						dur="2.5s"
+						fill="freeze"
+						path="m0,0 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155"
+					/>
+					<animateMotion begin="marker2_hide.end+750ms" dur="1ms" fill="freeze" path="m0,0" />
+				</rect>
+			</g>
+
+			<polygon fill="#5875a4" fill-opacity=".4" points="2005,95 2005,349 2255,684 2255,654">
+				<animate
+					begin="marker2_move.begin"
+					dur="2.5s"
+					fill="freeze"
+					attributeName="points"
+					values="
+						2005,95 2005,349 2255,684 2255,654; 2005,95 2005,349 2286,684 2286,654; 2005,95 2005,349 2317,684 2317,654; 2005,95 2005,349 2348,684 2348,654; 2005,95 2005,349 2379,684 2379,654; 2005,95 2005,349 2410,684 2410,654; 
+						2005,95 2005,349 2255,715 2255,685; 2005,95 2005,349 2286,715 2286,685; 2005,95 2005,349 2317,715 2317,685; 2005,95 2005,349 2348,715 2348,685; 2005,95 2005,349 2379,715 2379,685; 2005,95 2005,349 2410,715 2410,685; 
+						2005,95 2005,349 2255,746 2255,716; 2005,95 2005,349 2286,746 2286,716; 2005,95 2005,349 2317,746 2317,716; 2005,95 2005,349 2348,746 2348,716; 2005,95 2005,349 2379,746 2379,716; 2005,95 2005,349 2410,746 2410,716; 
+						2005,95 2005,349 2255,777 2255,747; 2005,95 2005,349 2286,777 2286,747; 2005,95 2005,349 2317,777 2317,747; 2005,95 2005,349 2348,777 2348,747; 2005,95 2005,349 2379,777 2379,747; 2005,95 2005,349 2410,777 2410,747; 
+						2005,95 2005,349 2255,808 2255,778; 2005,95 2005,349 2286,808 2286,778; 2005,95 2005,349 2317,808 2317,778; 2005,95 2005,349 2348,808 2348,778; 2005,95 2005,349 2379,808 2379,778; 2005,95 2005,349 2410,808 2410,778; 
+						2005,95 2005,349 2255,839 2255,809; 2005,95 2005,349 2286,839 2286,809; 2005,95 2005,349 2317,839 2317,809; 2005,95 2005,349 2348,839 2348,809; 2005,95 2005,349 2379,839 2379,809; 2005,95 2005,349 2410,839 2410,809; 
+					"
+					keyTimes="
+						0     ; 0.032 ; 0.064 ; 0.096 ; 0.128 ; 0.16  ;
+						0.16  ; 0.192 ; 0.224 ; 0.256 ; 0.288 ; 0.33  ;
+						0.33  ; 0.362 ; 0.394 ; 0.426 ; 0.458 ; 0.5   ;
+						0.5   ; 0.532 ; 0.564 ; 0.596 ; 0.628 ; 0.66  ;
+						0.66  ; 0.692 ; 0.724 ; 0.756 ; 0.788 ; 0.83  ;
+						0.83  ; 0.862 ; 0.894 ; 0.926 ; 0.958 ; 1
+					"
+				/>
+				<set attributeName="points" to="2005,95 2005,349 2255,684 2255,654" begin="marker2_hide.end+750ms" dur="indefinite" />
+			</polygon>
+
+			<polygon fill="#5875a4" fill-opacity=".4" points="2005,445 2005,699 2255,684 2255,654">
+				<animate
+					begin="marker2_move.begin"
+					dur="2.5s"
+					fill="freeze"
+					attributeName="points"
+					values="
+						2005,445 2005,699 2255,684 2255,654; 2005,445 2005,699 2286,684 2286,654; 2005,445 2005,699 2317,684 2317,654; 2005,445 2005,699 2348,684 2348,654; 2005,445 2005,699 2379,684 2379,654; 2005,445 2005,699 2410,684 2410,654; 
+						2005,445 2005,699 2255,715 2255,685; 2005,445 2005,699 2286,715 2286,685; 2005,445 2005,699 2317,715 2317,685; 2005,445 2005,699 2348,715 2348,685; 2005,445 2005,699 2379,715 2379,685; 2005,445 2005,699 2410,715 2410,685; 
+						2005,445 2005,699 2255,746 2255,716; 2005,445 2005,699 2286,746 2286,716; 2005,445 2005,699 2317,746 2317,716; 2005,445 2005,699 2348,746 2348,716; 2005,445 2005,699 2379,746 2379,716; 2005,445 2005,699 2410,746 2410,716; 
+						2005,445 2005,699 2255,777 2255,747; 2005,445 2005,699 2286,777 2286,747; 2005,445 2005,699 2317,777 2317,747; 2005,445 2005,699 2348,777 2348,747; 2005,445 2005,699 2379,777 2379,747; 2005,445 2005,699 2410,777 2410,747; 
+						2005,445 2005,699 2255,808 2255,778; 2005,445 2005,699 2286,808 2286,778; 2005,445 2005,699 2317,808 2317,778; 2005,445 2005,699 2348,808 2348,778; 2005,445 2005,699 2379,808 2379,778; 2005,445 2005,699 2410,808 2410,778; 
+						2005,445 2005,699 2255,839 2255,809; 2005,445 2005,699 2286,839 2286,809; 2005,445 2005,699 2317,839 2317,809; 2005,445 2005,699 2348,839 2348,809; 2005,445 2005,699 2379,839 2379,809; 2005,445 2005,699 2410,839 2410,809; 
+					"
+					keyTimes="
+						0     ; 0.032 ; 0.064 ; 0.096 ; 0.128 ; 0.16  ;
+						0.16  ; 0.192 ; 0.224 ; 0.256 ; 0.288 ; 0.33  ;
+						0.33  ; 0.362 ; 0.394 ; 0.426 ; 0.458 ; 0.5   ;
+						0.5   ; 0.532 ; 0.564 ; 0.596 ; 0.628 ; 0.66  ;
+						0.66  ; 0.692 ; 0.724 ; 0.756 ; 0.788 ; 0.83  ;
+						0.83  ; 0.862 ; 0.894 ; 0.926 ; 0.958 ; 1
+					"
+				/>
+				<set attributeName="points" to="2005,445 2005,699 2255,684 2255,654" begin="marker2_hide.end+750ms" dur="indefinite" />
+			</polygon>
+
+			<polygon fill="#5875a4" fill-opacity=".4" points="2005,795 2005,1049 2255,684 2255,654">
+				<animate
+					begin="marker2_move.begin"
+					dur="2.5s"
+					fill="freeze"
+					attributeName="points"
+					values="
+						2005,795 2005,1049 2255,684 2255,654; 2005,795 2005,1049 2286,684 2286,654; 2005,795 2005,1049 2317,684 2317,654; 2005,795 2005,1049 2348,684 2348,654; 2005,795 2005,1049 2379,684 2379,654; 2005,795 2005,1049 2410,684 2410,654; 
+						2005,795 2005,1049 2255,715 2255,685; 2005,795 2005,1049 2286,715 2286,685; 2005,795 2005,1049 2317,715 2317,685; 2005,795 2005,1049 2348,715 2348,685; 2005,795 2005,1049 2379,715 2379,685; 2005,795 2005,1049 2410,715 2410,685; 
+						2005,795 2005,1049 2255,746 2255,716; 2005,795 2005,1049 2286,746 2286,716; 2005,795 2005,1049 2317,746 2317,716; 2005,795 2005,1049 2348,746 2348,716; 2005,795 2005,1049 2379,746 2379,716; 2005,795 2005,1049 2410,746 2410,716; 
+						2005,795 2005,1049 2255,777 2255,747; 2005,795 2005,1049 2286,777 2286,747; 2005,795 2005,1049 2317,777 2317,747; 2005,795 2005,1049 2348,777 2348,747; 2005,795 2005,1049 2379,777 2379,747; 2005,795 2005,1049 2410,777 2410,747; 
+						2005,795 2005,1049 2255,808 2255,778; 2005,795 2005,1049 2286,808 2286,778; 2005,795 2005,1049 2317,808 2317,778; 2005,795 2005,1049 2348,808 2348,778; 2005,795 2005,1049 2379,808 2379,778; 2005,795 2005,1049 2410,808 2410,778; 
+						2005,795 2005,1049 2255,839 2255,809; 2005,795 2005,1049 2286,839 2286,809; 2005,795 2005,1049 2317,839 2317,809; 2005,795 2005,1049 2348,839 2348,809; 2005,795 2005,1049 2379,839 2379,809; 2005,795 2005,1049 2410,839 2410,809; 
+					"
+					keyTimes="
+						0     ; 0.032 ; 0.064 ; 0.096 ; 0.128 ; 0.16  ;
+						0.16  ; 0.192 ; 0.224 ; 0.256 ; 0.288 ; 0.33  ;
+						0.33  ; 0.362 ; 0.394 ; 0.426 ; 0.458 ; 0.5   ;
+						0.5   ; 0.532 ; 0.564 ; 0.596 ; 0.628 ; 0.66  ;
+						0.66  ; 0.692 ; 0.724 ; 0.756 ; 0.788 ; 0.83  ;
+						0.83  ; 0.862 ; 0.894 ; 0.926 ; 0.958 ; 1
+					"
+				/>
+				<set attributeName="points" to="2005,795 2005,1049 2255,684 2255,654" begin="marker2_hide.end+750ms" dur="indefinite" />
+			</polygon>
+
+			<polygon fill="#5875a4" fill-opacity=".4" points="2005,1145 2005,1399 2255,684 2255,654">
+				<animate
+					begin="marker2_move.begin"
+					dur="2.5s"
+					fill="freeze"
+					attributeName="points"
+					values="
+						2005,1145 2005,1399 2255,684 2255,654; 2005,1145 2005,1399 2286,684 2286,654; 2005,1145 2005,1399 2317,684 2317,654; 2005,1145 2005,1399 2348,684 2348,654; 2005,1145 2005,1399 2379,684 2379,654; 2005,1145 2005,1399 2410,684 2410,654; 
+						2005,1145 2005,1399 2255,715 2255,685; 2005,1145 2005,1399 2286,715 2286,685; 2005,1145 2005,1399 2317,715 2317,685; 2005,1145 2005,1399 2348,715 2348,685; 2005,1145 2005,1399 2379,715 2379,685; 2005,1145 2005,1399 2410,715 2410,685; 
+						2005,1145 2005,1399 2255,746 2255,716; 2005,1145 2005,1399 2286,746 2286,716; 2005,1145 2005,1399 2317,746 2317,716; 2005,1145 2005,1399 2348,746 2348,716; 2005,1145 2005,1399 2379,746 2379,716; 2005,1145 2005,1399 2410,746 2410,716; 
+						2005,1145 2005,1399 2255,777 2255,747; 2005,1145 2005,1399 2286,777 2286,747; 2005,1145 2005,1399 2317,777 2317,747; 2005,1145 2005,1399 2348,777 2348,747; 2005,1145 2005,1399 2379,777 2379,747; 2005,1145 2005,1399 2410,777 2410,747; 
+						2005,1145 2005,1399 2255,808 2255,778; 2005,1145 2005,1399 2286,808 2286,778; 2005,1145 2005,1399 2317,808 2317,778; 2005,1145 2005,1399 2348,808 2348,778; 2005,1145 2005,1399 2379,808 2379,778; 2005,1145 2005,1399 2410,808 2410,778; 
+						2005,1145 2005,1399 2255,839 2255,809; 2005,1145 2005,1399 2286,839 2286,809; 2005,1145 2005,1399 2317,839 2317,809; 2005,1145 2005,1399 2348,839 2348,809; 2005,1145 2005,1399 2379,839 2379,809; 2005,1145 2005,1399 2410,839 2410,809; 
+					"
+					keyTimes="
+						0     ; 0.032 ; 0.064 ; 0.096 ; 0.128 ; 0.16  ;
+						0.16  ; 0.192 ; 0.224 ; 0.256 ; 0.288 ; 0.33  ;
+						0.33  ; 0.362 ; 0.394 ; 0.426 ; 0.458 ; 0.5   ;
+						0.5   ; 0.532 ; 0.564 ; 0.596 ; 0.628 ; 0.66  ;
+						0.66  ; 0.692 ; 0.724 ; 0.756 ; 0.788 ; 0.83  ;
+						0.83  ; 0.862 ; 0.894 ; 0.926 ; 0.958 ; 1
+					"
+				/>
+				<set attributeName="points" to="2005,1145 2005,1399 2255,684 2255,654" begin="marker2_hide.end+750ms" dur="indefinite" />
+			</polygon>
+
+			<rect x="2255" y="654" width="30" height="30" fill="none" stroke="#4c72b0" stroke-width="5">
+	            <animateMotion
+	                begin="marker2_move.begin"
+	                dur="2.5s"
+	                fill="freeze"
+	                path="m0,0 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155 m-155,31 h155"
+	            />
+				<animateMotion begin="marker2_hide.end+750ms" dur="1ms" fill="freeze" path="m0,0" />
+	        </rect>
+		</g>
+	</g>
+</svg>

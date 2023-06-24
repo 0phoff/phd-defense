@@ -1,0 +1,17 @@
+{
+  "name": "final_defense",
+  "author": "0phoff",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev",
+    "export": "slidev export --per-slide"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.42.5",
+    "find-cache-dir": "^4.0.0",
+    "slidev-addon-animattr": "^1.1.0",
+    "slidev-theme-eavise": "^1.0.0",
+    "svgo": "^3.0.2"
+  }
+}
