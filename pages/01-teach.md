@@ -14,7 +14,6 @@ title: Teach Convolution
 ---
 title: Teach CNN
 ---
-
 # Neural Network
 
 ::content::
@@ -29,7 +28,6 @@ title: Teach CNN
 ---
 title: Teach Detection
 ---
-
 # Object Detection
 
 ::content::
@@ -43,7 +41,6 @@ title: Teach Detection
 ---
 title: Teach Training
 ---
-
 # Training
 
 ::content::
@@ -58,7 +55,6 @@ title: Teach Training
 title: Teach Statistics
 clicks: 7
 ---
-
 # Statistics
 
 ::content::
@@ -102,7 +98,6 @@ clicks: 7
 ---
 title: Teach Conclusions
 ---
-
 # Summary
 
 ::content::

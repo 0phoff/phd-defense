@@ -1,7 +1,6 @@
 ---
 title: Fusion Project
 ---
-
 # Project
 
 ::content::
@@ -34,7 +33,6 @@ by combining color and depth images
 ---
 title: Fusion Data
 ---
-
 # RGBD Fusion
 
 ::content::
@@ -92,7 +90,6 @@ title: Fusion Data
 title: Fusion Methodology
 clicks: 3
 ---
-
 # Methodology
 
 ::content::
@@ -129,7 +126,6 @@ clicks: 3
 ---
 title: Fusion Results
 ---
-
 # Results
 
 ::content::
@@ -162,7 +158,6 @@ title: Fusion Results
 ---
 title: Fusion Contributions
 ---
-
 # Contributions
 
 ::content::

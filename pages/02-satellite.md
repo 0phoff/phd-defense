@@ -1,7 +1,6 @@
 ---
 title: Satellite Project
 ---
-
 # Project
 
 ::content::
@@ -35,7 +34,6 @@ objects in satellite imagery
 ---
 title: Satellite Data
 ---
-
 # Satellite Detection
 
 ::content::
@@ -77,7 +75,6 @@ title: Satellite Data
 ---
 title: Satellite Methodology
 ---
-
 # Methodology
 
 ::content::
@@ -135,7 +132,6 @@ title: Satellite Methodology
 title: Satellite Results
 clicks: 8
 ---
-
 # Results
 
 ::content::
@@ -169,7 +165,6 @@ clicks: 8
 ---
 title: Satellite Contributions
 ---
-
 # Contributions
 
 ::content::

@@ -11,7 +11,6 @@ image-transform: scale(1.1)
 image-filter: grayscale(0.4)
 color-opacity: 0.5
 ---
-
 # Aerial Object Detection
 ## PhD Defense
 
@@ -48,7 +47,6 @@ earth
 ---
 layout: none
 ---
-
 <div class="!w-full !h-full bg-black grid-(~ rows-[1fr_1fr_1fr] gap-4) grid-hidden text-white">
 
 <Block
@@ -185,7 +183,6 @@ layout: section
 layout: none
 clicks: 7
 ---
-
 <div class="!w-full !h-full bg-black grid-(~ rows-[1fr_1fr_1fr] gap-4) grid-hidden text-white">
 
 <Block

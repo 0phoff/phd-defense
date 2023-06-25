@@ -1,7 +1,6 @@
 ---
 title: Speed Project
 ---
-
 # Project
 
 ::content::
@@ -31,7 +30,7 @@ without deteriorating the accuracy
 </style>
 
 ---
-
+---
 # Speed Optimizations
 
 ::content::
@@ -87,7 +86,6 @@ without deteriorating the accuracy
 ---
 title: Speed Convolutions
 ---
-
 # Mobile Convolutions
 
 ::content::
@@ -101,7 +99,6 @@ title: Speed Convolutions
 ---
 title: Speed Results 1
 ---
-
 # Results
 
 ::content::
@@ -124,7 +121,6 @@ title: Speed Results 1
 ---
 title: Speed Upsample
 ---
-
 # Upsample
 
 ::content::
@@ -138,7 +134,6 @@ title: Speed Upsample
 ---
 title: Speed Results 2
 ---
-
 # Results
 
 ::content::
@@ -161,7 +156,6 @@ title: Speed Results 2
 ---
 title: Speed Pruning
 ---
-
 # Pruning
 
 ::content::
@@ -175,7 +169,6 @@ title: Speed Pruning
 ---
 title: Speed Results 3
 ---
-
 # Results
 
 ::content::
@@ -198,7 +191,6 @@ title: Speed Results 3
 ---
 title: Speed Quantisation
 ---
-
 # Quantisation
 
 ::content::
@@ -214,7 +206,6 @@ title: Speed Quantisation
 ---
 title: Speed Results 4
 ---
-
 # Results
 
 ::content::
@@ -237,7 +228,6 @@ title: Speed Results 4
 ---
 title: Speed Contributions
 ---
-
 # Contributions
 
 ::content::

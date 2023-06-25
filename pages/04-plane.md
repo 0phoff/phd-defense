@@ -1,7 +1,6 @@
 ---
 title: Plane Project
 ---
-
 # Project
 
 ::content::
@@ -32,7 +31,7 @@ whilst combining data from multiple sources and sensors
 </style>
 
 ---
-
+---
 # Plane Detection
 
 ::content::
@@ -91,7 +90,6 @@ whilst combining data from multiple sources and sensors
 ---
 title: Plane Dataset
 ---
-
 # Dataset
 
 ::content::
@@ -170,43 +168,6 @@ title: Plane Baseline
 </style>
 
 ---
-title: Plane PostProcessing
----
-# Post Processing
-
-::content::
-
-<div class="grid-(~ cols-[1fr_1fr_1fr] rows-[1fr_1fr] gap-4) place-items-center w-full h-full grid-hidden">
-
-<img v-click src="/04-plane/nms-example-local.png" />
-<img v-click src="/04-plane/nms-neighbour-diagram.svg?url" />
-<img v-click src="/04-plane/nms-example-neighbour.png" />
-
-<img class="ioa-example" v-click src="/04-plane/ioa-example.png" />
-<img class="ioa-diagram" v-click src="/04-plane/ioa-diagram.svg?url" />
-
-</div>
-
-<style>
-    :deep(.slot-content) {
-        @apply mb-11 mt-6 mx-20;
-    }
-    img {
-        height: 100%;
-    }
-    .ioa-example {
-        height: 90.44%;
-        place-self: end center;
-    }
-    .ioa-diagram {
-        width: 84%;
-        height: auto;
-        grid-column-end: span 2;
-        place-self: end center;
-    }
-</style>
-
----
 title: Plane Models
 ---
 # Models
@@ -248,6 +209,44 @@ title: Plane Models
         text-transform: lowercase;
         font-variant: small-caps;
         font-size: 1.25em;
+    }
+</style>
+
+
+---
+title: Plane PostProcessing
+---
+# Post Processing
+
+::content::
+
+<div class="grid-(~ cols-[1fr_1fr_1fr] rows-[1fr_1fr] gap-4) place-items-center w-full h-full grid-hidden">
+
+<img v-click src="/04-plane/nms-example-local.png" />
+<img v-click src="/04-plane/nms-neighbour-diagram.svg?url" />
+<img v-click src="/04-plane/nms-example-neighbour.png" />
+
+<img class="ioa-example" v-click src="/04-plane/ioa-example.png" />
+<img class="ioa-diagram" v-click src="/04-plane/ioa-diagram.svg?url" />
+
+</div>
+
+<style>
+    :deep(.slot-content) {
+        @apply mb-11 mt-6 mx-20;
+    }
+    img {
+        height: 100%;
+    }
+    .ioa-example {
+        height: 90.44%;
+        place-self: end center;
+    }
+    .ioa-diagram {
+        width: 84%;
+        height: auto;
+        grid-column-end: span 2;
+        place-self: end center;
     }
 </style>
 
