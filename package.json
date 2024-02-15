@@ -13,5 +13,8 @@
     "slidev-addon-animattr": "^1.1.2",
     "slidev-theme-eavise": "^1.0.0",
     "svgo": "^3.0.2"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.41.2"
   }
 }
